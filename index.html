@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Kreatif - Design, Code, Create</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Poppins & Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.pers.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
@@ -52,7 +48,6 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(226, 232, 240, 0.8);
         }
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -85,18 +80,16 @@
             </nav>
 
             <div class="hidden md:flex items-center gap-4">
-                <a href="#kontak" class="px-5 py-2.5 rounded-xl bg-brand-blue text-white font-medium hover:bg-blue-600 transition-all shadow-md shadow-brand-blue/20 hover:shadow-lg hover:shadow-brand-blue/30">
+                <a href="#kontak" class="px-5 py-2.5 rounded-xl bg-brand-blue text-white font-medium hover:bg-blue-600 transition-all shadow-md shadow-brand-blue/20">
                     Hubungi Saya
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button id="menu-btn" class="md:hidden text-slate-800 focus:outline-none p-2 rounded-lg hover:bg-slate-100">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-6 border-b border-slate-200 bg-white/95 backdrop-blur-md">
             <div class="flex flex-col gap-4 font-medium text-slate-700">
                 <a href="#beranda" class="mobile-link hover:text-brand-blue py-1">Beranda</a>
@@ -109,7 +102,6 @@
     </header>
 
     <section id="beranda" class="relative pt-12 pb-24 md:py-32 px-6 overflow-hidden">
-        <!-- Background Decorative Pixel Grid Elements -->
         <div class="absolute top-10 left-10 grid grid-cols-2 gap-1 pointer-events-none opacity-60">
             <div class="w-3 h-3 bg-brand-blue"></div>
             <div class="w-3 h-3 bg-brand-blue"></div>
@@ -145,7 +137,6 @@
                     </a>
                 </div>
 
-                <!-- Stats -->
                 <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200/80">
                     <div>
                         <div class="font-heading font-bold text-3xl text-slate-900">35+</div>
@@ -162,15 +153,12 @@
                 </div>
             </div>
 
-            <!-- Hero Graphic Element -->
             <div class="lg:col-span-5 relative flex justify-center">
                 <div class="relative w-full max-w-md aspect-square rounded-3xl bg-gradient-to-br from-blue-500/10 via-brand-blue/5 to-transparent border border-blue-100 p-8 flex items-center justify-center shadow-2xl shadow-blue-500/10">
-                    <!-- Geometric pixel cluster representing artwork -->
                     <div class="relative w-64 h-64">
                         <div class="absolute inset-0 border-2 border-dashed border-brand-blue/30 rounded-full animate-spin" style="animation-duration: 30s;"></div>
                         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-brand-blue rounded-2xl rotate-12 opacity-10"></div>
                         
-                        <!-- Pixel crosshair / graphic asset -->
                         <div class="absolute top-6 left-6 grid grid-cols-4 gap-1.5 transform -rotate-12">
                             <div class="w-3 h-3 bg-brand-blue"></div>
                             <div class="w-3 h-3 bg-brand-blue"></div>
@@ -182,7 +170,6 @@
                             <div class="w-3 h-3 bg-brand-blue"></div>
                         </div>
 
-                        <!-- Central Accent Block -->
                         <div class="absolute inset-10 bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col items-center justify-center p-6 text-center">
                             <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-brand-blue text-3xl mb-4 shadow-inner">
                                 <i class="fa-solid fa-palette"></i>
@@ -204,7 +191,6 @@
                     <span class="text-brand-blue font-semibold text-sm tracking-wider uppercase">01 / Galeri Visual</span>
                     <h2 class="font-heading font-bold text-3xl md:text-5xl text-slate-900 mt-2">Desain Grafis & Brand Identity</h2>
                 </div>
-                <!-- Filter Buttons -->
                 <div class="flex flex-wrap gap-2" id="design-filters">
                     <button data-filter="all" class="filter-btn px-4 py-2 rounded-xl bg-brand-blue text-white text-sm font-medium transition-all shadow-sm">Semua</button>
                     <button data-filter="branding" class="filter-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-600 text-sm font-medium hover:bg-slate-200 transition-all">Branding</button>
@@ -213,18 +199,17 @@
                 </div>
             </div>
 
-            <!-- Portfolio Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="design-grid">
-                <!-- Item 1 -->
+                <!-- Item 1: Branding -->
                 <div class="design-card group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:border-brand-blue/50 transition-all duration-300 shadow-sm hover:shadow-xl" data-category="branding">
                     <div class="relative aspect-[4/3] bg-gradient-to-tr from-blue-900 to-brand-blue overflow-hidden p-6 flex items-center justify-center">
                         <div class="absolute inset-0 opacity-25 pixel-pattern"></div>
-                        <div class="relative z-10 text-center text-white">
-                            <div class="w-16 h-16 mx-auto bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl mb-3 border border-white/20">
-                                <i class="fa-solid fa-cube"></i>
+                        <!-- Mockup Placeholder Visual -->
+                        <div class="relative z-10 text-center text-white space-y-2">
+                            <div class="w-16 h-16 mx-auto bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl border border-white/20 shadow-lg">
+                                <i class="fa-solid fa-cube text-blue-200"></i>
                             </div>
-                            <h4 class="font-heading font-bold text-xl">Nexus Brand Identity</h4>
-                            <p class="text-blue-200 text-xs mt-1">Sistem Identitas Perusahaan Teknologi</p>
+                            <div class="bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-lg border border-white/10 text-xs font-mono tracking-widest uppercase">Placeholder: Brand Guidelines</div>
                         </div>
                         <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">Branding</div>
                     </div>
@@ -234,22 +219,22 @@
                             <span class="text-xs text-slate-500 font-medium">2026</span>
                         </div>
                         <p class="text-slate-600 text-sm line-clamp-2">Desain pedoman merek lengkap termasuk logo, palet warna, tipografi, dan aset media sosial komprehensif.</p>
-                        <button onclick="openModal('Nexus Brand Identity', 'Proyek ini berfokus pada pembuatan identitas merek menyeluruh untuk startup AI. Menggunakan konsep geometri tegas dan warna biru elektrik untuk mencerminkan inovasi dan kecepatan tinggi.', 'branding')" class="text-brand-blue font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                        <button onclick="openModal('Nexus Brand Identity', 'Proyek ini berfokus pada pembuatan identitas merek menyeluruh untuk startup AI. Menggunakan konsep geometri tegas dan warna biru elektrik untuk mencerminkan inovasi dan kecepatan tinggi. (Placeholder visual dapat diganti dengan file mockup PNG/JPG Anda sendiri).', 'branding')" class="text-brand-blue font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all">
                             Lihat Detail <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Item 2 -->
+                <!-- Item 2: UI/UX -->
                 <div class="design-card group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:border-brand-blue/50 transition-all duration-300 shadow-sm hover:shadow-xl" data-category="uiux">
                     <div class="relative aspect-[4/3] bg-gradient-to-tr from-sky-600 to-blue-500 overflow-hidden p-6 flex items-center justify-center">
                         <div class="absolute inset-0 opacity-25 pixel-pattern"></div>
-                        <div class="relative z-10 text-center text-white">
-                            <div class="w-16 h-16 mx-auto bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl mb-3 border border-white/20">
-                                <i class="fa-solid fa-mobile-screen"></i>
+                        <!-- Mockup Placeholder Visual -->
+                        <div class="relative z-10 text-center text-white space-y-2">
+                            <div class="w-16 h-16 mx-auto bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl border border-white/20 shadow-lg">
+                                <i class="fa-solid fa-mobile-screen text-blue-100"></i>
                             </div>
-                            <h4 class="font-heading font-bold text-xl">Fintech Mobile App UI</h4>
-                            <p class="text-blue-100 text-xs mt-1">Aplikasi Dompet Digital & Investasi</p>
+                            <div class="bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-lg border border-white/10 text-xs font-mono tracking-widest uppercase">Placeholder: Mobile App UI</div>
                         </div>
                         <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">UI/UX</div>
                     </div>
@@ -265,16 +250,16 @@
                     </div>
                 </div>
 
-                <!-- Item 3 -->
+                <!-- Item 3: Poster -->
                 <div class="design-card group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:border-brand-blue/50 transition-all duration-300 shadow-sm hover:shadow-xl" data-category="poster">
                     <div class="relative aspect-[4/3] bg-gradient-to-tr from-indigo-900 to-blue-700 overflow-hidden p-6 flex items-center justify-center">
                         <div class="absolute inset-0 opacity-25 pixel-pattern"></div>
-                        <div class="relative z-10 text-center text-white">
-                            <div class="w-16 h-16 mx-auto bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl mb-3 border border-white/20">
-                                <i class="fa-solid fa-feather"></i>
+                        <!-- Mockup Placeholder Visual -->
+                        <div class="relative z-10 text-center text-white space-y-2">
+                            <div class="w-16 h-16 mx-auto bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl border border-white/20 shadow-lg">
+                                <i class="fa-solid fa-feather text-indigo-200"></i>
                             </div>
-                            <h4 class="font-heading font-bold text-xl">Cyber Art Poster</h4>
-                            <p class="text-indigo-200 text-xs mt-1">Seri Poster Pameran Seni Digital</p>
+                            <div class="bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-lg border border-white/10 text-xs font-mono tracking-widest uppercase">Placeholder: Poster Art</div>
                         </div>
                         <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">Poster</div>
                     </div>
@@ -298,12 +283,10 @@
             <div>
                 <span class="text-brand-blue font-semibold text-sm tracking-wider uppercase">02 / Aplikasi Web Interaktif</span>
                 <h2 class="font-heading font-bold text-3xl md:text-5xl text-slate-900 mt-2">Web App Showcase</h2>
-                <p class="text-slate-600 mt-3 max-w-2xl">Cobalah aplikasi web interaktif sederhana yang dibuat langsung di dalam portofolio ini.</p>
+                <p class="text-slate-600 mt-3 max-w-2xl">Cobalah aplikasi web interaktif sederhana yang terintegrasi langsung di dalam portofolio ini.</p>
             </div>
 
-            <!-- Web App Container -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <!-- App Control Panel / Info -->
                 <div class="lg:col-span-4 space-y-6">
                     <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
                         <div class="flex items-center gap-3">
@@ -326,9 +309,7 @@
                     </div>
                 </div>
 
-                <!-- Live Interactive Web App Area (Pomodoro & Tasks) -->
                 <div class="lg:col-span-8 bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden p-6 md:p-8 space-y-8">
-                    <!-- Timer Section -->
                     <div class="bg-slate-50 rounded-2xl p-6 text-center border border-slate-200/80 space-y-4">
                         <div class="flex justify-center gap-2">
                             <button onclick="setTimerMode('pomodoro')" id="btn-pomodoro" class="px-4 py-1.5 rounded-lg bg-brand-blue text-white text-xs font-bold transition-all">Pomodoro (25m)</button>
@@ -347,7 +328,6 @@
                         </div>
                     </div>
 
-                    <!-- To-Do List Section -->
                     <div class="space-y-4">
                         <h4 class="font-heading font-bold text-lg text-slate-900 flex items-center gap-2">
                             <i class="fa-solid fa-list-check text-brand-blue"></i> Daftar Tugas Hari Ini
@@ -375,9 +355,7 @@
                 <p class="text-slate-600 mt-3 max-w-lg mx-auto">Tangkap kubus biru sebanyak mungkin menggunakan keranjang pixel dalam waktu 30 detik!</p>
             </div>
 
-            <!-- Game Canvas Container -->
             <div class="bg-slate-900 rounded-3xl p-4 md:p-8 shadow-2xl relative overflow-hidden border border-slate-800">
-                <!-- Game Header Stats -->
                 <div class="flex justify-between items-center text-white mb-6 px-4 font-heading">
                     <div class="flex items-center gap-2 bg-slate-800/80 px-4 py-2 rounded-xl border border-slate-700">
                         <i class="fa-solid fa-trophy text-yellow-400"></i>
@@ -389,9 +367,7 @@
                     </div>
                 </div>
 
-                <!-- Canvas Area -->
                 <div class="relative w-full h-[350px] bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 cursor-crosshair touch-none" id="game-container">
-                    <!-- Start Overlay -->
                     <div id="game-overlay" class="absolute inset-0 bg-slate-950/90 backdrop-blur-sm flex flex-col items-center justify-center p-6 z-20 text-center space-y-4">
                         <div class="w-16 h-16 bg-brand-blue/20 text-brand-blue rounded-2xl flex items-center justify-center text-3xl border border-brand-blue/40">
                             <i class="fa-solid fa-gamepad"></i>
@@ -403,11 +379,9 @@
                         </button>
                     </div>
 
-                    <!-- Game Elements Generated via JS -->
                     <div id="game-basket" class="absolute bottom-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-brand-blue rounded-full shadow-lg shadow-brand-blue/50 border border-blue-400"></div>
                 </div>
 
-                <!-- Mobile Touch Controls for Game -->
                 <div class="flex justify-between mt-6 md:hidden px-4">
                     <button ontouchstart="moveBasketLeft()" onclick="moveBasketLeft()" class="px-6 py-3 bg-slate-800 text-white font-bold rounded-xl active:bg-brand-blue">
                         <i class="fa-solid fa-arrow-left"></i> Kiri
@@ -451,7 +425,6 @@
                 </div>
             </div>
 
-            <!-- Contact Form -->
             <div class="bg-slate-800/80 backdrop-blur-md p-8 rounded-3xl border border-slate-700/80 shadow-2xl space-y-6">
                 <h3 class="font-heading font-bold text-xl text-white">Kirim Pesan Cepat</h3>
                 <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
@@ -513,7 +486,6 @@
     </div>
 
     <script>
-        // Mobile Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => {
@@ -523,7 +495,6 @@
             link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
 
-        // Design Filter Logic
         const filterBtns = document.querySelectorAll('.filter-btn');
         const designCards = document.querySelectorAll('.design-card');
 
@@ -547,7 +518,6 @@
             });
         });
 
-        // Modal Logic
         function openModal(title, desc, category) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-desc').innerText = desc;
@@ -559,7 +529,6 @@
             document.getElementById('detail-modal').classList.add('hidden');
         }
 
-        // Web App: Pomodoro & Tasks Logic
         let timerInterval = null;
         let timeLeft = 25 * 60;
         let isRunning = false;
@@ -623,7 +592,6 @@
             updateTimerDisplay();
         }
 
-        // To-Do App Logic
         let tasks = [
             { id: 1, text: 'Membuat sketsa wireframe UI baru', completed: true },
             { id: 2, text: 'Review kode frontend web app', completed: false }
@@ -669,16 +637,14 @@
             renderTasks();
         }
 
-        // Initialize Tasks
         renderTasks();
 
-        // Mini Game Logic (Pixel Catcher)
         let gameInterval = null;
         let itemInterval = null;
         let gameScore = 0;
         let gameTimeLeft = 30;
         let isGamePlaying = false;
-        let basketX = 50; // percentage
+        let basketX = 50;
         const container = document.getElementById('game-container');
         const basket = document.getElementById('game-basket');
 
@@ -693,10 +659,8 @@
             document.getElementById('game-score').innerText = gameScore;
             document.getElementById('game-time').innerText = gameTimeLeft;
 
-            // Clear existing game items
             document.querySelectorAll('.falling-item').forEach(el => el.remove());
 
-            // Timer countdown
             gameInterval = setInterval(() => {
                 gameTimeLeft--;
                 document.getElementById('game-time').innerText = gameTimeLeft;
@@ -705,7 +669,6 @@
                 }
             }, 1000);
 
-            // Spawn items
             itemInterval = setInterval(spawnItem, 700);
         }
 
@@ -713,7 +676,7 @@
             if (!isGamePlaying) return;
             const item = document.createElement('div');
             item.className = 'absolute w-8 h-8 bg-brand-blue rounded-lg shadow-md shadow-brand-blue/50 border border-blue-400 falling-item transition-all duration-75';
-            const randomX = Math.random() * 85 + 5; // percentage
+            const randomX = Math.random() * 85 + 5;
             item.style.left = randomX + '%';
             item.style.top = '0px';
             container.appendChild(item);
@@ -728,10 +691,8 @@
                 currentTop += 4;
                 item.style.top = currentTop + 'px';
 
-                // Check collision with basket (basket is near bottom ~ 300px)
                 if (currentTop >= 280 && currentTop <= 315) {
                     const itemLeft = parseFloat(item.style.left);
-                    // basket width is 24px (~6% of container approx or checked via pixel range)
                     if (Math.abs(itemLeft - basketX) < 12) {
                         gameScore += 10;
                         document.getElementById('game-score').innerText = gameScore;
@@ -759,7 +720,6 @@
             basket.style.left = basketX + '%';
         }
 
-        // Mouse/Touch movement inside game container
         container.addEventListener('mousemove', (e) => {
             if (!isGamePlaying) return;
             const rect = container.getBoundingClientRect();
@@ -792,7 +752,6 @@
             overlay.querySelector('button').innerText = 'Main Lagi';
         }
 
-        // Contact form handler
         function handleContactSubmit(e) {
             e.preventDefault();
             const name = document.getElementById('contact-name').value;
