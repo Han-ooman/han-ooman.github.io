@@ -1,346 +1,290 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanapi - Portfolio & Creative Space</title>
+    <title>Hanapi - Portofolio Desain, Web, & Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#eef2ff',
-                            100: '#e0e7ff',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
 
     <!-- Navbar -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="text-xl font-extrabold tracking-tight flex items-center gap-2">
-                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-lg">H.</span>
-                <span>Portfolio</span>
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-extrabold tracking-tight text-slate-900 flex items-center gap-2">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-xl text-lg shadow-sm shadow-blue-500/30">H</span>
+                <span>Hanapi<span class="text-blue-600">.</span></span>
             </a>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-blue-400 transition" data-i18n="nav_about">Tentang</a>
-                <a href="#projects" class="hover:text-blue-400 transition" data-i18n="nav_projects">Proyek</a>
-                <a href="#webapp" class="hover:text-blue-400 transition" data-i18n="nav_webapp">Web App</a>
-                <a href="#game" class="hover:text-blue-400 transition" data-i18n="nav_game">Mini Game</a>
-                <a href="#contact" class="hover:text-blue-400 transition" data-i18n="nav_contact">Kontak</a>
-            </nav>
-            <div class="flex items-center gap-4">
-                <button onclick="toggleLanguage()" class="px-3 py-1.5 rounded-full border border-slate-700 text-xs font-semibold hover:bg-slate-800 transition flex items-center gap-1.5">
-                    <i class="fa-solid fa-globe"></i>
-                    <span id="lang-label">ID</span>
+            
+            <div class="flex items-center gap-6">
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                    <a href="#about" class="hover:text-blue-600 transition nav-about">Tentang</a>
+                    <a href="#portfolio" class="hover:text-blue-600 transition nav-portfolio">Portofolio</a>
+                    <a href="#webapp" class="hover:text-blue-600 transition nav-webapp">Web App</a>
+                    <a href="#game" class="hover:text-blue-600 transition nav-game">Mini Game</a>
+                    <a href="#contact" class="hover:text-blue-600 transition nav-contact">Kontak</a>
+                </nav>
+
+                <!-- Language Switcher Button -->
+                <button id="langToggle" onclick="toggleLanguage()" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 hover:border-blue-600 text-xs font-semibold bg-white transition shadow-sm">
+                    <span id="langIndicator" class="text-blue-600 font-bold">ID</span> | <span class="text-slate-400">EN</span>
                 </button>
-                <a href="#contact" class="hidden sm:inline-flex bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition shadow-lg shadow-blue-600/20" data-i18n="btn_hire">Hubungi Saya</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 md:pt-44 md:pb-32 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.15),transparent_50%)]"></div>
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold mb-6">
-                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                    <span data-i18n="hero_badge">Multimedia Creator & Developer</span>
+    <section class="relative overflow-hidden pt-16 pb-24 border-b border-slate-200 bg-gradient-to-b from-white to-slate-50">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold tracking-wide">
+                    <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                    <span id="hero-badge">Multimedia & Software Developer • Sambas</span>
                 </div>
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                    Design. <span class="text-blue-500">Code.</span> Create.
+                <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-slate-900 leading-none">
+                    Design.<br>
+                    <span class="bg-blue-600 text-white px-2 py-0.5 rounded-lg inline-block my-1 shadow-md shadow-blue-500/20">Code.</span><br>
+                    Create.
                 </h1>
-                <p class="text-lg sm:text-xl text-slate-400 mb-10 leading-relaxed" data-i18n="hero_desc">
-                    Menggabungkan estetika desain grafis, pemodelan 3D, video profil, hingga pengembangan perangkat lunak fungsional untuk menciptakan pengalaman digital yang imersif dari Sambas, Indonesia[cite: 1].
+                <p id="hero-desc" class="text-lg text-slate-600 max-w-xl leading-relaxed">
+                    Memadukan estetika desain grafis, pemodelan 3D, penyuntingan video, dan fungsionalitas software development untuk menghadirkan pengalaman digital dan cetak yang imersif dari Sambas, Indonesia[cite: 1, 2, 5, 6].
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-7 py-3.5 rounded-xl transition shadow-xl shadow-blue-600/30 flex items-center gap-2">
-                        <span data-i18n="hero_btn_explore">Lihat Karya</span>
-                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#portfolio" id="btn-explore" class="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-600/30 transition transform hover:-translate-y-0.5">
+                        Lihat Portofolio
                     </a>
-                    <a href="#contact" class="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white font-semibold px-7 py-3.5 rounded-xl transition" data-i18n="hero_btn_contact">
-                        Kontak Langsung
+                    <a href="#contact" id="btn-hire" class="px-6 py-3.5 rounded-xl border border-slate-200 hover:border-slate-400 bg-white text-slate-700 font-semibold transition">
+                        Hubungi Saya
                     </a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 relative">
+                <div class="relative w-full aspect-square bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-3xl p-8 shadow-2xl flex flex-col justify-between text-white overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-white/10 rounded-full blur-2xl"></div>
+                    <div class="flex justify-between items-center z-10">
+                        <span class="text-xs font-bold uppercase tracking-widest bg-white/20 px-3 py-1 rounded-full">Featured Creator</span>
+                        <span class="text-sm font-mono opacity-85">Sambas, ID</span>[cite: 1]
+                    </div>
+                    <div class="z-10 space-y-2">
+                        <h3 class="text-2xl font-bold">Hanapi, S.Tr.Kom.</h3>
+                        <p class="text-sm text-blue-100 opacity-90">Graphic Design, 3D Artist, Video Editor & Web App Developer.</p>
+                    </div>
+                    <div class="z-10 pt-4 border-t border-white/20 flex justify-between text-xs font-medium">
+                        <span>hansy26.id@gmail.com</span>[cite: 1]
+                        <span>Available for Hire</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 bg-slate-900/50 border-t border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-i18n="proj_title">Portofolio Karya Pilihan</h2>
-                <p class="text-slate-400" data-i18n="proj_subtitle">Dokumentasi hasil proyek nyata mulai dari 3D, video profil, identitas merek, hingga kustomisasi cetak jersey.</p>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+                <span id="portfolio-subtitle" class="text-blue-600 font-bold text-xs uppercase tracking-widest">Karya Pilihan</span>
+                <h2 id="portfolio-title" class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Portofolio & Proyek</h2>
             </div>
+            <!-- Category Filters -->
+            <div id="filter-container" class="flex flex-wrap gap-2">
+                <button onclick="filterProject('all')" class="filter-btn active px-4 py-2 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-sm transition">Semua</button>
+                <button onclick="filterProject('3d')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-slate-400 transition">3D Modeling</button>
+                <button onclick="filterProject('video')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-slate-400 transition">Video Profile</button>
+                <button onclick="filterProject('logo')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-slate-400 transition">Logo Design</button>
+                <button onclick="filterProject('jersey')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-slate-400 transition">Jersey & Cetak</button>
+            </div>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project 1: 3D Modeling -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-blue-500/50 transition duration-300">
-                    <div class="h-64 bg-slate-800 relative overflow-hidden flex items-center justify-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent z-10"></div>
-                        <div class="text-slate-500 text-5xl group-hover:scale-110 transition duration-500">
-                            <i class="fa-solid fa-cube text-blue-500/80"></i>
-                        </div>
-                        <span class="absolute top-4 left-4 z-20 bg-blue-500/20 text-blue-400 border border-blue-500/30 text-xs font-semibold px-3 py-1 rounded-full">3D Modeling</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="p1_title">Blender 3D Siteplan & Perumahan</h3>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed" data-i18n="p1_desc">Pemodelan arsitektur 3D menggunakan Blender, mencakup visualisasi atap, lanskap perumahan, dan tata letak kawasan perumahan secara presisi.</p>
-                        <div class="flex flex-wrap gap-2 text-xs font-medium text-blue-400">
-                            <span class="bg-blue-500/10 px-2.5 py-1 rounded-md">Blender 3.5</span>
-                            <span class="bg-blue-500/10 px-2.5 py-1 rounded-md">Rendering</span>
-                            <span class="bg-blue-500/10 px-2.5 py-1 rounded-md">Architecture</span>
-                        </div>
+        <!-- Project Grid -->
+        <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Project 1: 3D Modeling -->
+            <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group" data-category="3d">
+                <div class="aspect-video bg-slate-900 relative overflow-hidden flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] opacity-20"></div>
+                    <div class="z-20 text-center p-6">
+                        <span class="bg-blue-600/80 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Blender 3D</span>
+                        <h3 class="text-white text-xl font-bold mt-2">Visualisasi Siteplan Perumahan (Blender 4.5)</h3>
                     </div>
                 </div>
-
-                <!-- Project 2: Video Profile -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-blue-500/50 transition duration-300">
-                    <div class="h-64 bg-slate-800 relative overflow-hidden flex items-center justify-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent z-10"></div>
-                        <div class="text-slate-500 text-5xl group-hover:scale-110 transition duration-500">
-                            <i class="fa-solid fa-clapperboard text-blue-500/80"></i>
-                        </div>
-                        <span class="absolute top-4 left-4 z-20 bg-purple-500/20 text-purple-400 border border-purple-500/30 text-xs font-semibold px-3 py-1 rounded-full">Video Profile</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="p2_title">Video Promosi Insok Water Way</h3>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed" data-i18n="p2_desc">Produksi dan penyuntingan video profil pariwisata lokal menggunakan Adobe Premiere Pro, lengkap dengan color grading dan pengaturan audio sinematik.</p>
-                        <div class="flex flex-wrap gap-2 text-xs font-medium text-purple-400">
-                            <span class="bg-purple-500/10 px-2.5 py-1 rounded-md">Adobe Premiere</span>
-                            <span class="bg-purple-500/10 px-2.5 py-1 rounded-md">Color Grading</span>
-                            <span class="bg-purple-500/10 px-2.5 py-1 rounded-md">Editing</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Logo Design -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-blue-500/50 transition duration-300">
-                    <div class="h-64 bg-slate-800 relative overflow-hidden flex items-center justify-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent z-10"></div>
-                        <div class="text-slate-500 text-5xl group-hover:scale-110 transition duration-500">
-                            <i class="fa-solid fa-pen-nib text-blue-500/80"></i>
-                        </div>
-                        <span class="absolute top-4 left-4 z-20 bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-semibold px-3 py-1 rounded-full">Logo & Guidelines</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="p3_title">Logo & Brand Guideline Sparing Bidar Insok</h3>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed" data-i18n="p3_desc">Perancangan identitas visual event Sparing Bidar Race Insok 2026 lengkap dengan buku panduan logo, pemilihan palet warna, dan tipografi resmi.</p>
-                        <div class="flex flex-wrap gap-2 text-xs font-medium text-amber-400">
-                            <span class="bg-amber-500/10 px-2.5 py-1 rounded-md">Vector Art</span>
-                            <span class="bg-amber-500/10 px-2.5 py-1 rounded-md">Brand Guideline</span>
-                            <span class="bg-amber-500/10 px-2.5 py-1 rounded-md">Illustrator</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: Apparel Design -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-blue-500/50 transition duration-300">
-                    <div class="h-64 bg-slate-800 relative overflow-hidden flex items-center justify-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent z-10"></div>
-                        <div class="text-slate-500 text-5xl group-hover:scale-110 transition duration-500">
-                            <i class="fa-solid fa-shirt text-blue-500/80"></i>
-                        </div>
-                        <span class="absolute top-4 left-4 z-20 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold px-3 py-1 rounded-full">Apparel & Printing</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="p4_title">Desain Jersey Tim Dayung & Cetak</h3>
-                        <p class="text-slate-400 text-sm mb-4 leading-relaxed" data-i18n="p4_desc">Pengembangan desain pakaian olahraga/jersey tim dayung "Dungun Sebatang" dan Smansa Sambas siap cetak dengan mockup tampilan depan & belakang.</p>
-                        <div class="flex flex-wrap gap-2 text-xs font-medium text-emerald-400">
-                            <span class="bg-emerald-500/10 px-2.5 py-1 rounded-md">Apparel Design</span>
-                            <span class="bg-emerald-500/10 px-2.5 py-1 rounded-md">Mockup</span>
-                            <span class="bg-emerald-500/10 px-2.5 py-1 rounded-md">Print Ready</span>
-                        </div>
+                <div class="p-6 space-y-4">
+                    <p class="text-sm text-slate-600 leading-relaxed">Pemodelan arsitektur 3D dan rendering tata letak perumahan menggunakan Blender, menciptakan tata letak realistik untuk kebutuhan tata kota dan properti[cite: 2].</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-[11px] font-semibold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">Blender</span>
+                        <span class="text-[11px] font-semibold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">Architectural Render</span>
                     </div>
                 </div>
             </div>
+
+            <!-- Project 2: Video Profile -->
+            <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group" data-category="video">
+                <div class="aspect-video bg-slate-900 relative overflow-hidden flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] opacity-20"></div>
+                    <div class="z-20 text-center p-6">
+                        <span class="bg-blue-600/80 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Adobe Premiere Pro</span>
+                        <h3 class="text-white text-xl font-bold mt-2">Video Profil & Promosi Insok Water Way</h3>
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <p class="text-sm text-slate-600 leading-relaxed">Penyuntingan video sinematik, *color grading* Lumetri, serta penyusunan alur cerita promosi pariwisata daerah di Sejangkung, Sambas[cite: 5].</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-[11px] font-semibold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">Adobe Premiere</span>
+                        <span class="text-[11px] font-semibold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">Color Grading</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Logo Design -->
+            <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group" data-category="logo">
+                <div class="aspect-video bg-slate-900 relative overflow-hidden flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] opacity-20"></div>
+                    <div class="z-20 text-center p-6">
+                        <span class="bg-amber-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Brand Guidelines</span>
+                        <h3 class="text-white text-xl font-bold mt-2">Logo & Identitas Sparing Bidar Race Insok 2026</h3>
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <p class="text-sm text-slate-600 leading-relaxed">Pembuatan konsep logo resmi, filosofi visual, pemilihan palet warna emas/hijau, tipografi, hingga panduan aplikasi mockup untuk event olahraga budaya[cite: 6].</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-[11px] font-semibold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">Vector Art</span>
+                        <span class="text-[11px] font-semibold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">Brand Guideline</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Jersey & Printing Design -->
+            <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group" data-category="jersey">
+                <div class="aspect-video bg-slate-900 relative overflow-hidden flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] opacity-20"></div>
+                    <div class="z-20 text-center p-6">
+                        <span class="bg-blue-600/80 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Apparel & Printing</span>
+                        <h3 class="text-white text-xl font-bold mt-2">Desain Jersey Tim Dayung "Dungun Sebatang" & Smansa</h3>
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <p class="text-sm text-slate-600 leading-relaxed">Perancangan pola dan desain visual baju/jersey tim dayung serta jersey kiper/pemain sepak bola lengkap dengan mockup tampak depan dan belakang siap cetak[cite: 9, 10].</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-[11px] font-semibold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">Jersey Mockup</span>
+                        <span class="text-[11px] font-semibold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">Sublimation Ready</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Web App Section -->
-    <section id="webapp" class="py-24 border-t border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-i18n="wa_title">Web App: Task & Focus Dashboard</h2>
-                <p class="text-slate-400" data-i18n="wa_subtitle">Contoh aplikasi web interaktif sederhana untuk mengelola daftar tugas harian dan fokus waktu kerja.</p>
+    <section id="webapp" class="py-24 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Interactive Web App</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Task & Productivity Tracker</h2>
+                <p class="text-slate-600 text-sm">Widget aplikasi web sederhana yang terintegrasi langsung di portofolio untuk mengelola tugas harian desain & coding Anda.</p>
             </div>
 
-            <div class="max-w-2xl mx-auto bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
-                <div class="flex items-center justify-between mb-8 pb-6 border-b border-slate-800">
-                    <div>
-                        <h3 class="text-lg font-bold text-white" data-i18n="wa_panel_title">Produktivitas Harian</h3>
-                        <p class="text-xs text-slate-400" data-i18n="wa_panel_desc">Kelola tugas kreatif Anda dengan mudah.</p>
-                    </div>
-                    <div class="bg-blue-600/10 text-blue-400 px-3 py-1 rounded-lg text-xs font-semibold border border-blue-500/20">
-                        <i class="fa-solid fa-bolt mr-1"></i> Interactive
-                    </div>
+            <div class="max-w-xl mx-auto bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+                <div class="flex gap-3">
+                    <input type="text" id="taskInput" placeholder="Tambah tugas baru (contoh: Render video 3D...)" class="flex-1 px-4 py-3 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600">
+                    <button onclick="addTask()" class="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-xl transition">Tambah</button>
                 </div>
-
-                <div class="flex gap-3 mb-6">
-                    <input type="text" id="task-input" placeholder="Tambah tugas baru..." class="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition">
-                    <button onclick="addTask()" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-3 rounded-xl text-sm font-semibold transition" data-i18n="wa_btn_add">Tambah</button>
-                </div>
-
-                <ul id="task-list" class="space-y-3 mb-6">
-                    <!-- Tasks injected by JS -->
+                <ul id="taskList" class="space-y-2.5">
+                    <li class="flex items-center justify-between p-3.5 bg-slate-50 border border-slate-200/60 rounded-xl text-sm">
+                        <span>Finalisasi Brand Guideline Bidar Race</span>
+                        <span class="text-xs text-blue-600 font-semibold bg-blue-50 px-2.5 py-1 rounded-md">Selesai</span>
+                    </li>
                 </ul>
-
-                <div class="text-xs text-slate-500 text-center" data-i18n="wa_footer">Data disimpan secara lokal pada sesi browser ini.</div>
             </div>
         </div>
     </section>
 
     <!-- Mini Game Section -->
-    <section id="game" class="py-24 bg-slate-900/50 border-t border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-i18n="game_title">Mini Game: Pixel Catcher</h2>
-                <p class="text-slate-400" data-i18n="game_subtitle">Gim arcade mini interaktif langsung di dalam peramban web Anda.</p>
+    <section id="game" class="py-24 max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Arcade Mini Game</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Pixel Catcher Challenge</h2>
+            <p class="text-slate-600 text-sm">Uji refleks tangan Anda! Klik kotak biru sebanyak mungkin dalam waktu 15 detik.</p>
+        </div>
+
+        <div class="max-w-md mx-auto bg-slate-900 text-white rounded-3xl p-8 shadow-xl text-center space-y-6 relative overflow-hidden">
+            <div class="flex justify-between items-center text-sm font-mono">
+                <span>Skor: <strong id="score" class="text-blue-400 text-lg">0</strong></span>
+                <span>Waktu: <strong id="timer" class="text-amber-400 text-lg">15</strong>s</span>
             </div>
 
-            <div class="max-w-xl mx-auto bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center shadow-2xl">
-                <div class="flex justify-between items-center mb-6 text-sm font-semibold">
-                    <span class="text-slate-400">Skor: <strong id="score-val" class="text-white">0</strong></span>
-                    <button onclick="startGame()" id="start-btn-game" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-xl transition text-xs" data-i18n="game_btn_start">Mulai Game</button>
-                </div>
-                <div id="game-canvas-area" class="h-64 bg-slate-950 rounded-xl border border-slate-800 relative overflow-hidden flex items-center justify-center cursor-crosshair">
-                    <div id="game-message" class="text-slate-500 text-sm font-medium" data-i18n="game_msg_init">Klik tombol "Mulai Game" di atas untuk bermain!</div>
-                    <div id="game-target" class="hidden absolute w-10 h-10 bg-blue-500 rounded-lg shadow-lg shadow-blue-500/50 flex items-center justify-center text-white cursor-pointer hover:bg-blue-400 transition" onclick="hitTarget()">
-                        <i class="fa-solid fa-star text-xs"></i>
-                    </div>
+            <div id="gameArea" class="w-full h-56 bg-slate-800 rounded-2xl relative border border-slate-700 overflow-hidden cursor-crosshair">
+                <div id="gameTarget" onclick="hitTarget()" class="w-12 h-12 bg-blue-500 rounded-xl absolute hidden cursor-pointer shadow-lg shadow-blue-500/50 hover:bg-blue-400 transition transform active:scale-90 flex items-center justify-center font-bold">🎯</div>
+                <div id="gameStartOverlay" class="absolute inset-0 bg-slate-900/90 flex flex-col items-center justify-center p-6 space-y-4">
+                    <p class="text-sm text-slate-300">Siap menguji kecepatan reaksi?</p>
+                    <button onclick="startGame()" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm transition shadow-lg shadow-blue-600/40">Mulai Game</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 border-t border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden">
-                <div class="absolute -right-20 -top-20 w-60 h-60 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-i18n="contact_title">Mari Berkolaborasi Bersama</h2>
-                <p class="text-slate-400 mb-8 max-w-xl mx-auto text-sm sm:text-base" data-i18n="contact_desc">
-                    Tertarik untuk bekerja sama dalam proyek desain grafis, video, 3D, atau pengembangan aplikasi web? Hubungi saya melalui email utama di bawah ini.
-                </p>
-                <div class="inline-flex flex-col sm:flex-row items-center gap-4 bg-slate-900 border border-slate-800 px-6 py-4 rounded-2xl mb-8">
-                    <div class="flex items-center gap-3 text-slate-300 font-medium">
-                        <i class="fa-solid fa-envelope text-blue-500"></i>
-                        <span>hansy26.id@gmail.com</span>
-                    </div>
-                    <span class="hidden sm:inline text-slate-700">|</span>
-                    <div class="flex items-center gap-3 text-slate-300 font-medium">
-                        <i class="fa-solid fa-location-dot text-blue-500"></i>
-                        <span data-i18n="contact_location">Sambas, Indonesia</span>
-                    </div>
+    <section id="contact" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <span class="text-blue-400 font-bold text-xs uppercase tracking-widest">Hubungi Saya</span>
+            <h2 class="text-4xl font-extrabold tracking-tight">Mari Berkolaborasi dalam Proyek Kreatif</h2>
+            <p class="text-slate-400 text-base max-w-xl mx-auto">
+                Punya proyek desain grafis, 3D modeling, video editing, atau pengembangan web & aplikasi? Hubungi saya langsung melalui email atau lokasi di Sambas[cite: 1, 2, 5, 6].
+            </p>
+            <div class="inline-flex flex-col sm:flex-row items-center gap-6 bg-slate-800/80 border border-slate-700/80 px-8 py-5 rounded-2xl">
+                <div class="flex items-center gap-3">
+                    <span class="text-blue-400 text-lg">✉</span>
+                    <a href="mailto:hansy26.id@gmail.com" class="font-medium text-white hover:text-blue-400 transition">hansy26.id@gmail.com</a>[cite: 1]
                 </div>
-                <div>
-                    <a href="mailto:hansy26.id@gmail.com" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl transition shadow-xl shadow-blue-600/20">
-                        <i class="fa-solid fa-paper-plane"></i>
-                        <span data-i18n="contact_btn">Kirim Email Sekarang</span>
-                    </a>
+                <span class="hidden sm:inline text-slate-600">|</span>
+                <div class="flex items-center gap-3">
+                    <span class="text-blue-400 text-lg">📍</span>
+                    <span class="text-slate-300">Sambas, Indonesia</span>[cite: 1]
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 bg-slate-950 border-t border-slate-900 text-center text-xs text-slate-500">
-        <p>&copy; 2026 Hanapi. All rights reserved. Sambas, Indonesia.</p>
+    <footer class="bg-slate-950 text-slate-500 py-8 text-center text-xs border-t border-slate-800">
+        <p>&copy; 2026 Hanapi. All rights reserved. • Design, Code, Create.</p>
     </footer>
 
-    <!-- JavaScript Scripts -->
+    <!-- JavaScript Logic -->
     <script>
-        // Translations data
+        // Language Data Dictionary
         const translations = {
             id: {
-                nav_about: "Tentang",
-                nav_projects: "Proyek",
-                nav_webapp: "Web App",
-                nav_game: "Mini Game",
-                nav_contact: "Kontak",
-                btn_hire: "Hubungi Saya",
-                hero_badge: "Multimedia Creator & Developer",
-                hero_desc: "Menggabungkan estetika desain grafis, pemodelan 3D, video profil, hingga pengembangan perangkat lunak fungsional untuk menciptakan pengalaman digital yang imersif dari Sambas, Indonesia.",
-                hero_btn_explore: "Lihat Karya",
-                hero_btn_contact: "Kontak Langsung",
-                proj_title: "Portofolio Karya Pilihan",
-                proj_subtitle: "Dokumentasi hasil proyek nyata mulai dari 3D, video profil, identitas merek, hingga kustomisasi cetak jersey.",
-                p1_title: "Blender 3D Siteplan & Perumahan",
-                p1_desc: "Pemodelan arsitektur 3D menggunakan Blender, mencakup visualisasi atap, lanskap perumahan, dan tata letak kawasan perumahan secara presisi.",
-                p2_title: "Video Promosi Insok Water Way",
-                p2_desc: "Produksi dan penyuntingan video profil pariwisata lokal menggunakan Adobe Premiere Pro, lengkap dengan color grading dan pengaturan audio sinematik.",
-                p3_title: "Logo & Brand Guideline Sparing Bidar Insok",
-                p3_desc: "Perancangan identitas visual event Sparing Bidar Race Insok 2026 lengkap dengan buku panduan logo, pemilihan palet warna, dan tipografi resmi.",
-                p4_title: "Desain Jersey Tim Dayung & Cetak",
-                p4_desc: "Pengembangan desain pakaian olahraga/jersey tim dayung \"Dungun Sebatang\" dan Smansa Sambas siap cetak dengan mockup tampilan depan & belakang.",
-                wa_title: "Web App: Task & Focus Dashboard",
-                wa_subtitle: "Contoh aplikasi web interaktif sederhana untuk mengelola daftar tugas harian dan fokus waktu kerja.",
-                wa_panel_title: "Produktivitas Harian",
-                wa_panel_desc: "Kelola tugas kreatif Anda dengan mudah.",
-                wa_btn_add: "Tambah",
-                wa_footer: "Data disimpan secara lokal pada sesi browser ini.",
-                game_title: "Mini Game: Pixel Catcher",
-                game_subtitle: "Gim arcade mini interaktif langsung di dalam peramban web Anda.",
-                game_btn_start: "Mulai Game",
-                game_msg_init: "Klik tombol \"Mulai Game\" di atas untuk bermain!",
-                contact_title: "Mari Berkolaborasi Bersama",
-                contact_desc: "Tertarik untuk bekerja sama dalam proyek desain grafis, video, 3D, atau pengembangan aplikasi web? Hubungi saya melalui email utama di bawah ini.",
-                contact_location: "Sambas, Indonesia",
-                contact_btn: "Kirim Email Sekarang"
+                navAbout: "Tentang",
+                navPortfolio: "Portofolio",
+                navWebapp: "Web App",
+                navGame: "Mini Game",
+                navContact: "Kontak",
+                heroBadge: "Multimedia & Software Developer • Sambas",
+                heroDesc: "Memadukan estetika desain grafis, pemodelan 3D, penyuntingan video, dan fungsionalitas software development untuk menghadirkan pengalaman digital dan cetak yang imersif dari Sambas, Indonesia.",
+                btnExplore: "Lihat Portofolio",
+                btnHire: "Hubungi Saya",
+                portfolioSubtitle: "Karya Pilihan",
+                portfolioTitle: "Portofolio & Proyek",
             },
             en: {
-                nav_about: "About",
-                nav_projects: "Projects",
-                nav_webapp: "Web App",
-                nav_game: "Mini Game",
-                nav_contact: "Contact",
-                btn_hire: "Hire Me",
-                hero_badge: "Multimedia Creator & Developer",
-                hero_desc: "Blending graphic design aesthetics, 3D modeling, video profiles, and software development to craft immersive digital experiences from Sambas, Indonesia.",
-                hero_btn_explore: "View Works",
-                hero_btn_contact: "Direct Contact",
-                proj_title: "Selected Portfolio Works",
-                proj_subtitle: "Documentation of real projects ranging from 3D modeling, video profiles, brand identities, to jersey apparel printing.",
-                p1_title: "Blender 3D Siteplan & Housing",
-                p1_desc: "3D architectural modeling using Blender, featuring roof visualizations, housing layouts, and precise spatial environments.",
-                p2_title: "Insok Water Way Promo Video",
-                p2_desc: "Production and editing of local tourism promotional videos using Adobe Premiere Pro, complete with color grading and cinematic audio.",
-                p3_title: "Sparing Bidar Logo & Brand Guidelines",
-                p3_desc: "Visual identity design for the Sparing Bidar Race Insok 2026 event complete with logo guidelines, color palette selection, and typography.",
-                p4_title: "Rowing Team Jersey Design & Print",
-                p4_desc: "Apparel development for \"Dungun Sebatang\" and Smansa Sambas rowing team jerseys ready for print with front and back mockups.",
-                wa_title: "Web App: Task & Focus Dashboard",
-                wa_subtitle: "A simple interactive web app example to manage daily tasks and work focus sessions.",
-                wa_panel_title: "Daily Productivity",
-                wa_panel_desc: "Manage your creative tasks easily.",
-                wa_btn_add: "Add",
-                wa_footer: "Data is stored locally during this browser session.",
-                game_title: "Mini Game: Pixel Catcher",
-                game_subtitle: "An interactive mini arcade game right inside your web browser.",
-                game_btn_start: "Start Game",
-                game_msg_init: "Click the \"Start Game\" button above to play!",
-                contact_title: "Let's Collaborate Together",
-                contact_desc: "Interested in working together on graphic design, video, 3D, or web app development projects? Contact me via email below.",
-                contact_location: "Sambas, Indonesia",
-                contact_btn: "Send Email Now"
+                navAbout: "About",
+                navPortfolio: "Portfolio",
+                navWebapp: "Web App",
+                navGame: "Mini Game",
+                navContact: "Contact",
+                heroBadge: "Multimedia & Software Developer • Sambas",
+                heroDesc: "Blending the aesthetics of graphic design, 3D modeling, video editing, and software development to craft immersive digital and print experiences from Sambas, Indonesia.",
+                btnExplore: "Explore Portfolio",
+                btnHire: "Hire Me",
+                portfolioSubtitle: "Selected Works",
+                portfolioTitle: "Portfolio & Projects",
             }
         };
 
@@ -348,100 +292,85 @@
 
         function toggleLanguage() {
             currentLang = currentLang === 'id' ? 'en' : 'id';
-            document.getElementById('lang-label').innerText = currentLang.toUpperCase();
+            document.getElementById('langIndicator').innerText = currentLang.toUpperCase();
             
-            const elements = document.querySelectorAll('[data-i18n]');
-            elements.forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[currentLang][key]) {
-                    el.innerText = translations[currentLang][key];
+            // Update static texts
+            document.querySelector('.nav-about').innerText = translations[currentLang].navAbout;
+            document.querySelector('.nav-portfolio').innerText = translations[currentLang].navPortfolio;
+            document.querySelector('.nav-webapp').innerText = translations[currentLang].navWebapp;
+            document.querySelector('.nav-game').innerText = translations[currentLang].navGame;
+            document.querySelector('.nav-contact').innerText = translations[currentLang].navContact;
+            document.getElementById('hero-badge').innerText = translations[currentLang].heroBadge;
+            document.getElementById('hero-desc').innerText = translations[currentLang].heroDesc;
+            document.getElementById('btn-explore').innerText = translations[currentLang].btnExplore;
+            document.getElementById('btn-hire').innerText = translations[currentLang].btnHire;
+            document.getElementById('portfolio-subtitle').innerText = translations[currentLang].portfolioSubtitle;
+            document.getElementById('portfolio-title').innerText = translations[currentLang].portfolioTitle;
+        }
+
+        // Project Filter Logic
+        function filterProject(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-white', 'border', 'border-slate-200', 'text-slate-600');
+            });
+            event.target.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+            event.target.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-600');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
                 }
             });
         }
 
         // Web App Task Logic
-        let tasks = [
-            { text: "Finishing Blender 3D roof rendering", done: true },
-            { text: "Editing Insok Water Way video profile", done: false },
-            { text: "Exporting Sparing Bidar logo vector assets", done: false }
-        ];
-
-        function renderTasks() {
-            const list = document.getElementById('task-list');
-            list.innerHTML = '';
-            tasks.forEach((task, index) => {
-                list.innerHTML += `
-                    <li class="flex items-center justify-between bg-slate-950 border border-slate-800/80 px-4 py-3 rounded-xl text-sm">
-                        <label class="flex items-center gap-3 cursor-pointer select-none">
-                            <input type="checkbox" ${task.done ? 'checked' : ''} onclick="toggleTask(${index})" class="w-4 h-4 rounded border-slate-700 bg-slate-900 text-blue-600 focus:ring-0">
-                            <span class="${task.done ? 'line-through text-slate-500' : 'text-slate-200'}">${task.text}</span>
-                        </label>
-                        <button onclick="deleteTask(${index})" class="text-slate-600 hover:text-red-400 transition text-xs"><i class="fa-solid fa-trash"></i></button>
-                    </li>
-                `;
-            });
-        }
-
         function addTask() {
-            const input = document.getElementById('task-input');
-            if (input.value.trim() !== '') {
-                tasks.push({ text: input.value.trim(), done: false });
-                input.value = '';
-                renderTasks();
-            }
-        }
+            const input = document.getElementById('taskInput');
+            const list = document.getElementById('taskList');
+            if (input.value.trim() === '') return;
 
-        function toggleTask(index) {
-            tasks[index].done = !tasks[index].done;
-            renderTasks();
+            const li = document.createElement('li');
+            li.className = 'flex items-center justify-between p-3.5 bg-slate-50 border border-slate-200/60 rounded-xl text-sm animate-fade-in';
+            li.innerHTML = `<span>${input.value}</span><button onclick="this.parentElement.remove()" class="text-xs text-rose-500 font-semibold hover:underline">Hapus</button>`;
+            list.appendChild(li);
+            input.value = '';
         }
-
-        function deleteTask(index) {
-            tasks.splice(index, 1);
-            renderTasks();
-        }
-
-        renderTasks();
 
         // Mini Game Logic
         let score = 0;
-        let gameInterval = null;
-        let gameActive = false;
+        let timeLeft = 15;
+        let gameInterval;
+        let targetInterval;
 
         function startGame() {
             score = 0;
-            document.getElementById('score-val').innerText = score;
-            document.getElementById('game-message').classList.add('hidden');
-            const target = document.getElementById('game-target');
-            target.classList.remove('hidden');
-            gameActive = true;
+            timeLeft = 15;
+            document.getElementById('score').innerText = score;
+            document.getElementById('timer').innerText = timeLeft;
+            document.getElementById('gameStartOverlay').style.display = 'none';
+            document.getElementById('gameTarget').style.display = 'flex';
             moveTarget();
 
-            // Auto end after 20 seconds or manage clicks
-            if (gameInterval) clearInterval(gameInterval);
-            let timeLeft = 20;
-            document.getElementById('start-btn-game').innerText = `Waktu: ${timeLeft}s`;
-            
             gameInterval = setInterval(() => {
                 timeLeft--;
-                document.getElementById('start-btn-game').innerText = `Waktu: ${timeLeft}s`;
+                document.getElementById('timer').innerText = timeLeft;
                 if (timeLeft <= 0) {
-                    clearInterval(gameInterval);
-                    gameActive = false;
-                    target.classList.add('hidden');
-                    document.getElementById('game-message').classList.remove('hidden');
-                    document.getElementById('game-message').innerText = `Game Selesai! Skor Akhir Anda: ${score}`;
-                    document.getElementById('start-btn-game').innerText = currentLang === 'id' ? 'Mulai Ulang' : 'Restart Game';
+                    endGame();
                 }
             }, 1000);
         }
 
         function moveTarget() {
-            if (!gameActive) return;
-            const area = document.getElementById('game-canvas-area');
-            const target = document.getElementById('game-target');
-            const maxX = area.clientWidth - 50;
-            const maxY = area.clientHeight - 50;
+            const area = document.getElementById('gameArea');
+            const target = document.getElementById('gameTarget');
+            const maxX = area.clientWidth - target.clientWidth;
+            const maxY = area.clientHeight - target.clientHeight;
             const randomX = Math.floor(Math.random() * maxX);
             const randomY = Math.floor(Math.random() * maxY);
             target.style.left = randomX + 'px';
@@ -449,10 +378,17 @@
         }
 
         function hitTarget() {
-            if (!gameActive) return;
-            score += 10;
-            document.getElementById('score-val').innerText = score;
+            score++;
+            document.getElementById('score').innerText = score;
             moveTarget();
+        }
+
+        function endGame() {
+            clearInterval(gameInterval);
+            document.getElementById('gameTarget').style.display = 'none';
+            const overlay = document.getElementById('gameStartOverlay');
+            overlay.style.display = 'flex';
+            overlay.querySelector('p').innerText = `Waktu habis! Skor akhir Anda: ${score}`;
         }
     </script>
 </body>
