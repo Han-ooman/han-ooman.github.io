@@ -1,144 +1,943 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanapi — Portfolio & Design Space</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Portofolio Kreatif & Interaktif - Design. Code. Create.</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        background: '#030712',
-                        cardBg: 'rgba(17, 24, 39, 0.7)',
-                        borderCol: 'rgba(55, 65, 81, 0.5)',
-                        accentGlow: '#6366f1',
+                        brand: {
+                            blue: '#0055FF',
+                            dark: '#0A0F1D',
+                            light: '#F8FAFC',
+                            accent: '#3B82F6'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Space Grotesk"', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        .glow-effect {
-            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
+            overflow-x: hidden;
         }
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
         }
-        .card-hover:hover {
-            transform: translateY(-4px);
-            border-color: rgba(99, 102, 241, 0.5);
-            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+        .pixel-pattern {
+            background-image: radial-gradient(#0055FF 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0055FF;
+            border-radius: 4px;
         }
     </style>
 </head>
-<body class="bg-background text-gray-100 min-h-screen font-sans antialiased selection:bg-indigo-500 selection:text-white glow-effect">
+<body class="bg-brand-light text-slate-800 antialiased selection:bg-brand-blue selection:text-white">
 
-    <!-- Container Utama -->
-    <div class="max-w-4xl mx-auto px-6 py-16">
-
-        <!-- Navigation / Header Profile -->
-        <header class="flex flex-col items-center text-center pb-12 border-b border-gray-800/80">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-medium mb-6">
-                <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-                Sambas, Indonesia • Available for Projects
-            </div>
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-200/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-brand-blue rounded-xl flex items-center justify-center text-white font-heading font-bold text-xl shadow-lg shadow-brand-blue/30 group-hover:scale-105 transition-transform">
+                    D
+                </div>
+                <span class="font-heading font-bold text-xl tracking-tight text-slate-900">Portfolio<span class="text-brand-blue">.</span></span>
+            </a>
             
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
-                Hanapi
-            </h1>
-            <p class="text-gray-400 text-base md:text-lg max-w-xl mb-8">
-                Design Engineer & Creative Professional. Berfokus pada estetika visual, tata letak digital yang bersih, dan fungsionalitas modern.
-            </p>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#beranda" data-i18n="nav_home" class="hover:text-brand-blue transition-colors">Beranda</a>
+                <a href="#desain" data-i18n="nav_design" class="hover:text-brand-blue transition-colors">Desain Grafis</a>
+                <a href="#webapp" data-i18n="nav_webapp" class="hover:text-brand-blue transition-colors">Web App</a>
+                <a href="#game" data-i18n="nav_game" class="hover:text-brand-blue transition-colors">Mini Game</a>
+                <a href="#kontak" data-i18n="nav_contact" class="hover:text-brand-blue transition-colors">Kontak</a>
+            </nav>
 
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="mailto:hansy26.id@gmail.com" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition shadow-lg shadow-indigo-600/20">
-                    Hubungi Email
-                </a>
-                <a href="https://github.com/han-ooman" target="_blank" class="px-5 py-2.5 rounded-xl bg-gray-900 hover:bg-gray-800 border border-gray-800 text-gray-300 font-medium text-sm transition">
-                    GitHub Profile
+            <div class="flex items-center gap-4">
+                <!-- Language Switcher Toggle -->
+                <div class="flex items-center bg-slate-200/80 p-1 rounded-xl border border-slate-300/60 shadow-inner">
+                    <button onclick="switchLanguage('id')" id="lang-id" class="px-3 py-1 rounded-lg text-xs font-bold transition-all bg-brand-blue text-white shadow-sm">ID</button>
+                    <button onclick="switchLanguage('en')" id="lang-en" class="px-3 py-1 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900">EN</button>
+                </div>
+                
+                <a href="#kontak" data-i18n="btn_contact_me" class="hidden md:inline-flex px-5 py-2.5 rounded-xl bg-brand-blue text-white font-medium hover:bg-blue-600 transition-all shadow-md shadow-brand-blue/20">
+                    Hubungi Saya
                 </a>
             </div>
-        </header>
 
-        <!-- Tentang Saya -->
-        <section class="py-12 border-b border-gray-800/80">
-            <h2 class="text-xl font-semibold mb-4 tracking-tight flex items-center gap-2 text-white">
-                <span class="text-indigo-500">#</span> Tentang Saya
-            </h2>
-            <p class="text-gray-400 leading-relaxed">
-                Berbasis di Sambas, Indonesia. Saya memiliki ketertarikan mendalam dalam merancang solusi visual, mengelola tata letak dokumen atau media digital, serta mengeksplorasi teknologi web modern. Setiap karya dirancang dengan perhatian tinggi terhadap detail dan pengalaman pengguna.
-            </p>
-        </section>
+            <button id="menu-btn" class="md:hidden text-slate-800 focus:outline-none p-2 rounded-lg hover:bg-slate-100 ml-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
 
-        <!-- Karya / Proyek Pilihan -->
-        <section class="py-12 border-b border-gray-800/80">
-            <h2 class="text-xl font-semibold mb-6 tracking-tight flex items-center gap-2 text-white">
-                <span class="text-indigo-500">#</span> Pilihan Proyek & Karya
-            </h2>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-6 border-b border-slate-200 bg-white/95 backdrop-blur-md">
+            <div class="flex flex-col gap-4 font-medium text-slate-700">
+                <a href="#beranda" data-i18n="nav_home" class="mobile-link hover:text-brand-blue py-1">Beranda</a>
+                <a href="#desain" data-i18n="nav_design" class="mobile-link hover:text-brand-blue py-1">Desain Grafis</a>
+                <a href="#webapp" data-i18n="nav_webapp" class="mobile-link hover:text-brand-blue py-1">Web App</a>
+                <a href="#game" data-i18n="nav_game" class="mobile-link hover:text-brand-blue py-1">Mini Game</a>
+                <a href="#kontak" data-i18n="nav_contact" class="mobile-link hover:text-brand-blue py-1">Kontak</a>
+            </div>
+        </div>
+    </header>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Kartu Proyek 1 -->
-                <div class="card-hover bg-cardBg border border-borderCol rounded-2xl p-6 backdrop-blur-md flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-2 block">Branding & Visual</span>
-                        <h3 class="text-lg font-bold text-white mb-2">Desain Identitas & Media Promosi</h3>
-                        <p class="text-gray-400 text-sm mb-4">Pengembangan konsep estetika visual, aset grafis, dan materi publikasi yang konsisten.</p>
+    <section id="beranda" class="relative pt-12 pb-24 md:py-32 px-6 overflow-hidden">
+        <div class="absolute top-10 left-10 grid grid-cols-2 gap-1 pointer-events-none opacity-60">
+            <div class="w-3 h-3 bg-brand-blue"></div>
+            <div class="w-3 h-3 bg-brand-blue"></div>
+            <div class="w-3 h-3 bg-brand-blue"></div>
+            <div class="w-3 h-3 bg-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-8">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-brand-blue text-sm font-semibold tracking-wide">
+                    <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span> <span data-i18n="hero_badge">Kreatif & Interaktif Showcase</span>
+                </div>
+                
+                <div class="space-y-2">
+                    <div class="inline-block bg-brand-blue text-white font-heading font-bold text-5xl md:text-7xl px-4 py-1.5 tracking-tight shadow-md">
+                        Design.
                     </div>
-                    <div class="pt-4 border-t border-gray-800/50 flex items-center justify-between text-xs text-gray-500">
-                        <span>Desain Grafis</span>
-                        <span class="text-indigo-400 font-medium">Lihat Detail →</span>
+                    <h1 class="font-heading font-bold text-5xl md:text-7xl tracking-tight text-slate-900 leading-none">
+                        Code.<br>Create.
+                    </h1>
+                </div>
+
+                <p data-i18n="hero_desc" class="text-slate-600 text-lg md:text-xl max-w-xl leading-relaxed">
+                    Memadukan estetika desain grafis tingkat lanjut dengan fungsionalitas pengembangan perangkat lunak untuk menciptakan pengalaman digital yang imersif. Jelajahi karya visual, aplikasi web, dan game interaktif di sini.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#desain" data-i18n="hero_explore" class="px-8 py-4 rounded-xl bg-brand-blue text-white font-semibold hover:bg-blue-600 transition-all shadow-lg shadow-brand-blue/30 flex items-center gap-3 group">
+                        Jelajahi Portofolio <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                    </a>
+                    <a href="#game" data-i18n="hero_play_game" class="px-8 py-4 rounded-xl bg-white text-slate-800 border border-slate-200 font-semibold hover:bg-slate-50 transition-all shadow-sm flex items-center gap-3">
+                        <i class="fa-solid fa-gamepad text-brand-blue"></i> Mainkan Game
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200/80">
+                    <div>
+                        <div class="font-heading font-bold text-3xl text-slate-900">35+</div>
+                        <div data-i18n="stat_1" class="text-slate-500 text-sm mt-1">Proyek Desain</div>
+                    </div>
+                    <div>
+                        <div class="font-heading font-bold text-3xl text-slate-900">15+</div>
+                        <div data-i18n="stat_2" class="text-slate-500 text-sm mt-1">Web Apps</div>
+                    </div>
+                    <div>
+                        <div class="font-heading font-bold text-3xl text-slate-900">100%</div>
+                        <div data-i18n="stat_3" class="text-slate-500 text-sm mt-1">Kepuasan Klien</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 relative flex justify-center">
+                <div class="relative w-full max-w-md aspect-square rounded-3xl bg-gradient-to-br from-blue-500/10 via-brand-blue/5 to-transparent border border-blue-100 p-8 flex items-center justify-center shadow-2xl shadow-blue-500/10">
+                    <div class="relative w-64 h-64">
+                        <div class="absolute inset-0 border-2 border-dashed border-brand-blue/30 rounded-full animate-spin" style="animation-duration: 30s;"></div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-brand-blue rounded-2xl rotate-12 opacity-10"></div>
+                        
+                        <div class="absolute top-6 left-6 grid grid-cols-4 gap-1.5 transform -rotate-12">
+                            <div class="w-3 h-3 bg-brand-blue"></div>
+                            <div class="w-3 h-3 bg-brand-blue"></div>
+                            <div class="w-3 h-3 bg-transparent"></div>
+                            <div class="w-3 h-3 bg-brand-blue"></div>
+                            <div class="w-3 h-3 bg-transparent"></div>
+                            <div class="w-3 h-3 bg-brand-blue"></div>
+                            <div class="w-3 h-3 bg-brand-blue"></div>
+                            <div class="w-3 h-3 bg-brand-blue"></div>
+                        </div>
+
+                        <div class="absolute inset-10 bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col items-center justify-center p-6 text-center">
+                            <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-brand-blue text-3xl mb-4 shadow-inner">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-slate-900 text-lg">Creative Studio</h3>
+                            <p data-i18n="studio_subtitle" class="text-slate-500 text-xs mt-1">Desain Visual & Interaktif Modern</p>
+                            <span data-i18n="studio_active" class="mt-4 px-3 py-1 bg-brand-blue text-white text-[10px] font-bold rounded-full uppercase tracking-wider">Aktif</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="desain" class="py-24 px-6 bg-white border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <span data-i18n="design_tag" class="text-brand-blue font-semibold text-sm tracking-wider uppercase">01 / Galeri Visual</span>
+                    <h2 data-i18n="design_title" class="font-heading font-bold text-3xl md:text-5xl text-slate-900 mt-2">Desain Grafis & Brand Identity</h2>
+                </div>
+                <div class="flex flex-wrap gap-2" id="design-filters">
+                    <button data-filter="all" data-i18n="filter_all" class="filter-btn px-4 py-2 rounded-xl bg-brand-blue text-white text-sm font-medium transition-all shadow-sm">Semua</button>
+                    <button data-filter="branding" data-i18n="filter_branding" class="filter-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-600 text-sm font-medium hover:bg-slate-200 transition-all">Branding</button>
+                    <button data-filter="uiux" data-i18n="filter_uiux" class="filter-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-600 text-sm font-medium hover:bg-slate-200 transition-all">UI/UX Mobile</button>
+                    <button data-filter="poster" data-i18n="filter_poster" class="filter-btn px-4 py-2 rounded-xl bg-slate-100 text-slate-600 text-sm font-medium hover:bg-slate-200 transition-all">Poster & Ilustrasi</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="design-grid">
+                <!-- Item 1: Branding -->
+                <div class="design-card group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:border-brand-blue/50 transition-all duration-300 shadow-sm hover:shadow-xl" data-category="branding">
+                    <div class="relative aspect-[4/3] bg-gradient-to-tr from-blue-900 to-brand-blue overflow-hidden p-6 flex items-center justify-center">
+                        <div class="absolute inset-0 opacity-25 pixel-pattern"></div>
+                        <div class="relative z-10 text-center text-white space-y-2">
+                            <div class="w-16 h-16 mx-auto bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl border border-white/20 shadow-lg">
+                                <i class="fa-solid fa-cube text-blue-200"></i>
+                            </div>
+                            <div data-i18n="card_ph_1" class="bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-lg border border-white/10 text-xs font-mono tracking-widest uppercase">Placeholder: Brand Guidelines</div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">Branding</div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-heading font-bold text-lg text-slate-900">Nexus Brand Guide</h3>
+                            <span class="text-xs text-slate-500 font-medium">2026</span>
+                        </div>
+                        <p data-i18n="card_desc_1" class="text-slate-600 text-sm line-clamp-2">Desain pedoman merek lengkap termasuk logo, palet warna, tipografi, dan aset media sosial komprehensif.</p>
+                        <button onclick="openModal('Nexus Brand Identity', 'Proyek ini berfokus pada pembuatan identitas merek menyeluruh untuk startup AI. Menggunakan konsep geometri tegas dan warna biru elektrik untuk mencerminkan inovasi dan kecepatan tinggi.', 'branding')" data-i18n="btn_view_detail" class="text-brand-blue font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                            Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Kartu Proyek 2 -->
-                <div class="card-hover bg-cardBg border border-borderCol rounded-2xl p-6 backdrop-blur-md flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-2 block">Layout & Digital Assets</span>
-                        <h3 class="text-lg font-bold text-white mb-2">Publikasi & Tata Letak Proyek</h3>
-                        <p class="text-gray-400 text-sm mb-4">Penyusunan struktur informasi, booklet, serta manajemen aset digital yang terorganisir.</p>
+                <!-- Item 2: UI/UX -->
+                <div class="design-card group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:border-brand-blue/50 transition-all duration-300 shadow-sm hover:shadow-xl" data-category="uiux">
+                    <div class="relative aspect-[4/3] bg-gradient-to-tr from-sky-600 to-blue-500 overflow-hidden p-6 flex items-center justify-center">
+                        <div class="absolute inset-0 opacity-25 pixel-pattern"></div>
+                        <div class="relative z-10 text-center text-white space-y-2">
+                            <div class="w-16 h-16 mx-auto bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl border border-white/20 shadow-lg">
+                                <i class="fa-solid fa-mobile-screen text-blue-100"></i>
+                            </div>
+                            <div data-i18n="card_ph_2" class="bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-lg border border-white/10 text-xs font-mono tracking-widest uppercase">Placeholder: Mobile App UI</div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">UI/UX</div>
                     </div>
-                    <div class="pt-4 border-t border-gray-800/50 flex items-center justify-between text-xs text-gray-500">
-                        <span>Layouting</span>
-                        <span class="text-indigo-400 font-medium">Lihat Detail →</span>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-heading font-bold text-lg text-slate-900">Aura Finance UI</h3>
+                            <span class="text-xs text-slate-500 font-medium">2025</span>
+                        </div>
+                        <p data-i18n="card_desc_2" class="text-slate-600 text-sm line-clamp-2">Desain antarmuka aplikasi seluler dengan fokus pada kemudahan akses, mode gelap/terang, dan visualisasi data keuangan.</p>
+                        <button onclick="openModal('Aura Finance UI', 'Perancangan UI/UX aplikasi keuangan yang memprioritaskan user experience yang mulus. Menggunakan pendekatan minimalis berbasis grid dan kontras warna yang nyaman.', 'uiux')" data-i18n="btn_view_detail" class="text-brand-blue font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                            Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 3: Poster -->
+                <div class="design-card group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:border-brand-blue/50 transition-all duration-300 shadow-sm hover:shadow-xl" data-category="poster">
+                    <div class="relative aspect-[4/3] bg-gradient-to-tr from-indigo-900 to-blue-700 overflow-hidden p-6 flex items-center justify-center">
+                        <div class="absolute inset-0 opacity-25 pixel-pattern"></div>
+                        <div class="relative z-10 text-center text-white space-y-2">
+                            <div class="w-16 h-16 mx-auto bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl border border-white/20 shadow-lg">
+                                <i class="fa-solid fa-feather text-indigo-200"></i>
+                            </div>
+                            <div data-i18n="card_ph_3" class="bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-lg border border-white/10 text-xs font-mono tracking-widest uppercase">Placeholder: Poster Art</div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">Poster</div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-heading font-bold text-lg text-slate-900">Digital Futurism Poster</h3>
+                            <span class="text-xs text-slate-500 font-medium">2026</span>
+                        </div>
+                        <p data-i18n="card_desc_3" class="text-slate-600 text-sm line-clamp-2">Koleksi poster eksperimental bertema masa depan teknologi dengan kombinasi tipografi tegas dan elemen raster.</p>
+                        <button onclick="openModal('Digital Futurism Poster', 'Eksperimen visual menggabungkan estetika retro-futuristik dengan layout modern Swiss Style. Dipamerkan pada festival desain digital tahunan.', 'poster')" data-i18n="btn_view_detail" class="text-brand-blue font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                            Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Keahlian / Tech Stack -->
-        <section class="py-12 border-b border-gray-800/80">
-            <h2 class="text-xl font-semibold mb-6 tracking-tight flex items-center gap-2 text-white">
-                <span class="text-indigo-500">#</span> Keahlian & Alat
-            </h2>
-            <div class="flex flex-wrap gap-2.5">
-                <span class="px-3 py-1.5 rounded-lg bg-gray-900 border border-gray-800 text-gray-300 text-xs font-medium">Desain Grafis</span>
-                <span class="px-3 py-1.5 rounded-lg bg-gray-900 border border-gray-800 text-gray-300 text-xs font-medium">Tata Letak (Layouting)</span>
-                <span class="px-3 py-1.5 rounded-lg bg-gray-900 border border-gray-800 text-gray-300 text-xs font-medium">UI/UX Modern</span>
-                <span class="px-3 py-1.5 rounded-lg bg-gray-900 border border-gray-800 text-gray-300 text-xs font-medium">Manajemen Aset Web</span>
-                <span class="px-3 py-1.5 rounded-lg bg-gray-900 border border-gray-800 text-gray-300 text-xs font-medium">Tailwind CSS</span>
-                <span class="px-3 py-1.5 rounded-lg bg-gray-900 border border-gray-800 text-gray-300 text-xs font-medium">Multimedia</span>
+    <section id="webapp" class="py-24 px-6 bg-brand-light border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <div>
+                <span data-i18n="webapp_tag" class="text-brand-blue font-semibold text-sm tracking-wider uppercase">02 / Aplikasi Web Interaktif</span>
+                <h2 data-i18n="webapp_title" class="font-heading font-bold text-3xl md:text-5xl text-slate-900 mt-2">Web App Showcase</h2>
+                <p data-i18n="webapp_subtitle" class="text-slate-600 mt-3 max-w-2xl">Cobalah aplikasi web interaktif sederhana yang terintegrasi langsung di dalam portofolio ini.</p>
             </div>
-        </section>
 
-        <!-- Kontak & Lokasi -->
-        <section class="py-12 border-b border-gray-800/80">
-            <h2 class="text-xl font-semibold mb-4 tracking-tight flex items-center gap-2 text-white">
-                <span class="text-indigo-500">#</span> Hubungi Saya
-            </h2>
-            <p class="text-gray-400 text-sm mb-4">Punya proyek menarik atau ingin berdiskusi? Silakan kirimkan email langsung ke:</p>
-            <a href="mailto:hansy26.id@gmail.com" class="text-indigo-400 hover:underline font-medium text-base">hansy26.id@gmail.com</a>
-        </section>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-brand-blue text-xl">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-bold text-lg text-slate-900">TaskFlow & Pomodoro</h3>
+                                <span data-i18n="webapp_card_sub" class="text-xs text-slate-500 font-medium">Produktivitas Harian</span>
+                            </div>
+                        </div>
+                        <p data-i18n="webapp_card_desc" class="text-slate-600 text-sm">
+                            Aplikasi manajemen tugas terintegrasi dengan timer Pomodoro untuk membantu Anda fokus menyelesaikan pekerjaan harian.
+                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-lg">JavaScript</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-lg">Tailwind</span>
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-lg">LocalStorage</span>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Footer -->
-        <footer class="pt-12 text-center text-xs text-gray-500">
-            <p>&copy; 2026 Hanapi • Sambas, Indonesia. Dibangun dengan estetika modern.</p>
-        </footer>
+                <div class="lg:col-span-8 bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden p-6 md:p-8 space-y-8">
+                    <div class="bg-slate-50 rounded-2xl p-6 text-center border border-slate-200/80 space-y-4">
+                        <div class="flex justify-center gap-2">
+                            <button onclick="setTimerMode('pomodoro')" id="btn-pomodoro" class="px-4 py-1.5 rounded-lg bg-brand-blue text-white text-xs font-bold transition-all">Pomodoro (25m)</button>
+                            <button onclick="setTimerMode('shortBreak')" id="btn-short" data-i18n="btn_break" class="px-4 py-1.5 rounded-lg bg-white text-slate-600 text-xs font-bold border border-slate-200 transition-all">Istirahat (5m)</button>
+                        </div>
+                        <div id="timer-display" class="font-heading font-bold text-5xl md:text-6xl text-slate-900 tracking-wider">
+                            25:00
+                        </div>
+                        <div class="flex justify-center gap-4">
+                            <button onclick="toggleTimer()" id="timer-toggle-btn" class="px-6 py-2.5 bg-brand-blue text-white rounded-xl font-semibold text-sm hover:bg-blue-600 transition-all shadow-md shadow-brand-blue/20">
+                                <i class="fa-solid fa-play mr-2"></i> <span data-i18n="btn_start">Mulai</span>
+                            </button>
+                            <button onclick="resetTimer()" class="px-6 py-2.5 bg-white text-slate-700 border border-slate-200 rounded-xl font-semibold text-sm hover:bg-slate-100 transition-all">
+                                <i class="fa-solid fa-rotate-right mr-2"></i> <span data-i18n="btn_reset">Reset</span>
+                            </button>
+                        </div>
+                    </div>
 
+                    <div class="space-y-4">
+                        <h4 data-i18n="task_heading" class="font-heading font-bold text-lg text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-list-check text-brand-blue"></i> Daftar Tugas Hari Ini
+                        </h4>
+                        <div class="flex gap-2">
+                            <input type="text" id="task-input" data-i18n-placeholder="task_placeholder" placeholder="Tambahkan tugas baru..." class="flex-1 px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue text-sm bg-slate-50">
+                            <button onclick="addTask()" data-i18n="btn_add" class="px-6 py-3 bg-brand-blue text-white rounded-xl font-semibold text-sm hover:bg-blue-600 transition-all shadow-md shadow-brand-blue/20">
+                                Tambah
+                            </button>
+                        </div>
+                        <div class="space-y-2 max-h-60 overflow-y-auto pr-1" id="task-list">
+                            <!-- Tasks injected via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="game" class="py-24 px-6 bg-white border-t border-slate-200/65">
+        <div class="max-w-4xl mx-auto space-y-12 text-center">
+            <div>
+                <span data-i18n="game_tag" class="text-brand-blue font-semibold text-sm tracking-wider uppercase">03 / Mini Game Interaktif</span>
+                <h2 class="font-heading font-bold text-3xl md:text-5xl text-slate-900 mt-2">Pixel Catcher Arcade</h2>
+                <p data-i18n="game_subtitle" class="text-slate-600 mt-3 max-w-lg mx-auto">Tangkap kubus biru sebanyak mungkin menggunakan keranjang pixel dalam waktu 30 detik!</p>
+            </div>
+
+            <div class="bg-slate-900 rounded-3xl p-4 md:p-8 shadow-2xl relative overflow-hidden border border-slate-800">
+                <div class="flex justify-between items-center text-white mb-6 px-4 font-heading">
+                    <div class="flex items-center gap-2 bg-slate-800/80 px-4 py-2 rounded-xl border border-slate-700">
+                        <i class="fa-solid fa-trophy text-yellow-400"></i>
+                        <span><span data-i18n="game_score">Skor</span>: <strong id="game-score" class="text-brand-accent">0</strong></span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-slate-800/80 px-4 py-2 rounded-xl border border-slate-700">
+                        <i class="fa-solid fa-stopwatch text-red-400"></i>
+                        <span><span data-i18n="game_time">Waktu</span>: <strong id="game-time" class="text-red-400">30</strong>s</span>
+                    </div>
+                </div>
+
+                <div class="relative w-full h-[350px] bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 cursor-crosshair touch-none" id="game-container">
+                    <div id="game-overlay" class="absolute inset-0 bg-slate-950/90 backdrop-blur-sm flex flex-col items-center justify-center p-6 z-20 text-center space-y-4">
+                        <div class="w-16 h-16 bg-brand-blue/20 text-brand-blue rounded-2xl flex items-center justify-center text-3xl border border-brand-blue/40">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white">Pixel Catcher</h3>
+                        <p data-i18n="game_desc" class="text-slate-400 text-sm max-w-xs">Gerakkan kursor atau sentuh layar ke kiri & kanan untuk menangkap kubus biru yang jatuh.</p>
+                        <button onclick="startGame()" data-i18n="btn_play_game" class="px-8 py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-heading font-bold rounded-xl transition-all shadow-lg shadow-brand-blue/40">
+                            Mulai Bermain
+                        </button>
+                    </div>
+
+                    <div id="game-basket" class="absolute bottom-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-brand-blue rounded-full shadow-lg shadow-brand-blue/50 border border-blue-400"></div>
+                </div>
+
+                <div class="flex justify-between mt-6 md:hidden px-4">
+                    <button ontouchstart="moveBasketLeft()" onclick="moveBasketLeft()" class="px-6 py-3 bg-slate-800 text-white font-bold rounded-xl active:bg-brand-blue">
+                        <i class="fa-solid fa-arrow-left"></i> <span data-i18n="btn_left">Kiri</span>
+                    </button>
+                    <button ontouchstart="moveBasketRight()" onclick="moveBasketRight()" class="px-6 py-3 bg-slate-800 text-white font-bold rounded-xl active:bg-brand-blue">
+                        <span data-i18n="btn_right">Kanan</span> <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-24 px-6 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pixel-pattern pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10 items-center">
+            <div class="space-y-6">
+                <span data-i18n="contact_tag" class="text-brand-accent font-semibold text-sm tracking-wider uppercase">04 / Hubungi Kami</span>
+                <h2 data-i18n="contact_title" class="font-heading font-bold text-3xl md:text-5xl">Mari Berkolaborasi Bersama!</h2>
+                <p data-i18n="contact_subtitle" class="text-slate-400 text-base md:text-lg leading-relaxed">
+                    Punya proyek menarik seputar desain grafis, pembuatan aplikasi web, atau sekadar ingin berdiskusi? Jangan ragu untuk mengirimkan pesan.
+                </p>
+                <div class="space-y-4 pt-2">
+                    <div class="flex items-center gap-4 text-slate-300">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-accent text-lg">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <div data-i18n="contact_email_label" class="text-xs text-slate-400">Email Utama</div>
+                            <div class="font-heading font-semibold text-white">hansy26.id@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 text-slate-300">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-accent text-lg">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <div data-i18n="contact_location_label" class="text-xs text-slate-400">Lokasi</div>
+                            <div class="font-heading font-semibold text-white">Sambas, Indonesia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-800/80 backdrop-blur-md p-8 rounded-3xl border border-slate-700/80 shadow-2xl space-y-6">
+                <h3 data-i18n="form_title" class="font-heading font-bold text-xl text-white">Kirim Pesan Cepat</h3>
+                <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                    <div>
+                        <label data-i18n="form_name" class="block text-xs font-medium text-slate-300 mb-1">Nama Lengkap</label>
+                        <input type="text" id="contact-name" required data-i18n-placeholder="form_name_ph" placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-accent">
+                    </div>
+                    <div>
+                        <label data-i18n="form_email" class="block text-xs font-medium text-slate-300 mb-1">Alamat Email</label>
+                        <input type="email" id="contact-email" required data-i18n-placeholder="form_email_ph" placeholder="nama@email.com" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-accent">
+                    </div>
+                    <div>
+                        <label data-i18n="form_message" class="block text-xs font-medium text-slate-300 mb-1">Pesan</label>
+                        <textarea id="contact-message" rows="4" required data-i18n-placeholder="form_message_ph" placeholder="Tuliskan pesan atau detail proyek Anda..." class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-accent"></textarea>
+                    </div>
+                    <button type="submit" data-i18n="form_submit" class="w-full py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-heading font-bold rounded-xl transition-all shadow-lg shadow-brand-blue/30 flex items-center justify-center gap-2">
+                        <span>Kirim Pesan</span> <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 py-12 px-6 text-slate-500 text-sm border-t border-slate-900">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center text-white font-heading font-bold">D</div>
+                <span data-i18n="footer_brand" class="font-heading font-bold text-white tracking-tight">Portfolio Kreatif</span>
+            </div>
+            <p data-i18n="footer_copy" class="text-center md:text-left text-xs">© 2026 Portofolio Interaktif. Dibangun dengan Desain Bersih & Tailwind CSS.</p>
+            <div class="flex items-center gap-4 text-lg">
+                <a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-dribbble"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 space-y-6 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-800 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="inline-block px-3 py-1 bg-blue-50 text-brand-blue text-xs font-bold rounded-full uppercase tracking-wider" id="modal-category">Kategori</div>
+            <h3 class="font-heading font-bold text-2xl text-slate-900" id="modal-title">Judul Proyek</h3>
+            <p class="text-slate-600 text-sm leading-relaxed" id="modal-desc">Deskripsi lengkap proyek akan tampil di sini.</p>
+            <div class="pt-4 border-t border-slate-100 flex justify-end">
+                <button onclick="closeModal()" data-i18n="modal_close" class="px-6 py-2.5 bg-slate-900 text-white rounded-xl text-sm font-semibold hover:bg-slate-800 transition-all">Tutup</button>
+            </div>
+        </div>
     </div>
 
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-slate-900 text-white px-6 py-3.5 rounded-2xl shadow-2xl border border-slate-800 flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-brand-accent text-lg"></i>
+        <span id="toast-msg" class="text-sm font-medium">Pesan berhasil terkirim!</span>
+    </div>
+
+    <script>
+        const translations = {
+            id: {
+                nav_home: "Beranda",
+                nav_design: "Desain Grafis",
+                nav_webapp: "Web App",
+                nav_game: "Mini Game",
+                nav_contact: "Kontak",
+                btn_contact_me: "Hubungi Saya",
+                hero_badge: "Kreatif & Interaktif Showcase",
+                hero_desc: "Memadukan estetika desain grafis tingkat lanjut dengan fungsionalitas pengembangan perangkat lunak untuk menciptakan pengalaman digital yang imersif. Jelajahi karya visual, aplikasi web, dan game interaktif di sini.",
+                hero_explore: "Jelajahi Portofolio",
+                hero_play_game: "Mainkan Game",
+                stat_1: "Proyek Desain",
+                stat_2: "Web Apps",
+                stat_3: "Kepuasan Klien",
+                studio_subtitle: "Desain Visual & Interaktif Modern",
+                studio_active: "Aktif",
+                design_tag: "01 / Galeri Visual",
+                design_title: "Desain Grafis & Brand Identity",
+                filter_all: "Semua",
+                filter_branding: "Branding",
+                filter_uiux: "UI/UX Mobile",
+                filter_poster: "Poster & Ilustrasi",
+                card_ph_1: "Placeholder: Brand Guidelines",
+                card_desc_1: "Desain pedoman merek lengkap termasuk logo, palet warna, tipografi, dan aset media sosial komprehensif.",
+                card_ph_2: "Placeholder: Mobile App UI",
+                card_desc_2: "Desain antarmuka aplikasi seluler dengan fokus pada kemudahan akses, mode gelap/terang, dan visualisasi data keuangan.",
+                card_ph_3: "Placeholder: Poster Art",
+                card_desc_3: "Koleksi poster eksperimental bertema masa depan teknologi dengan kombinasi tipografi tegas dan elemen raster.",
+                btn_view_detail: "Lihat Detail",
+                webapp_tag: "02 / Aplikasi Web Interaktif",
+                webapp_title: "Web App Showcase",
+                webapp_subtitle: "Cobalah aplikasi web interaktif sederhana yang terintegrasi langsung di dalam portofolio ini.",
+                webapp_card_sub: "Produktivitas Harian",
+                webapp_card_desc: "Aplikasi manajemen tugas terintegrasi dengan timer Pomodoro untuk membantu Anda fokus menyelesaikan pekerjaan harian.",
+                btn_break: "Istirahat (5m)",
+                btn_start: "Mulai",
+                btn_reset: "Reset",
+                task_heading: "Daftar Tugas Hari Ini",
+                task_placeholder: "Tambahkan tugas baru...",
+                btn_add: "Tambah",
+                game_tag: "03 / Mini Game Interaktif",
+                game_subtitle: "Tangkap kubus biru sebanyak mungkin menggunakan keranjang pixel dalam waktu 30 detik!",
+                game_score: "Skor",
+                game_time: "Waktu",
+                game_desc: "Gerakkan kursor atau sentuh layar ke kiri & kanan untuk menangkap kubus biru yang jatuh.",
+                btn_play_game: "Mulai Bermain",
+                btn_left: "Kiri",
+                btn_right: "Kanan",
+                contact_tag: "04 / Hubungi Kami",
+                contact_title: "Mari Berkolaborasi Bersama!",
+                contact_subtitle: "Punya proyek menarik seputar desain grafis, pembuatan aplikasi web, atau sekadar ingin berdiskusi? Jangan ragu untuk mengirimkan pesan.",
+                contact_email_label: "Email Utama",
+                contact_location_label: "Lokasi",
+                form_title: "Kirim Pesan Cepat",
+                form_name: "Nama Lengkap",
+                form_name_ph: "Masukkan nama Anda...",
+                form_email: "Alamat Email",
+                form_email_ph: "nama@email.com",
+                form_message: "Pesan",
+                form_message_ph: "Tuliskan pesan atau detail proyek Anda...",
+                form_submit: "Kirim Pesan",
+                footer_brand: "Portfolio Kreatif",
+                footer_copy: "© 2026 Portofolio Interaktif. Dibangun dengan Desain Bersih & Tailwind CSS.",
+                modal_close: "Tutup",
+                toast_success: "Pesan berhasil terkirim!"
+            },
+            en: {
+                nav_home: "Home",
+                nav_design: "Graphic Design",
+                nav_webapp: "Web App",
+                nav_game: "Mini Game",
+                nav_contact: "Contact",
+                btn_contact_me: "Contact Me",
+                hero_badge: "Creative & Interactive Showcase",
+                hero_desc: "Blending advanced graphic design aesthetics with software development functionality to create immersive digital experiences. Explore visual works, web apps, and interactive games here.",
+                hero_explore: "Explore Portfolio",
+                hero_play_game: "Play Game",
+                stat_1: "Design Projects",
+                stat_2: "Web Apps",
+                stat_3: "Client Satisfaction",
+                studio_subtitle: "Modern Visual & Interactive Design",
+                studio_active: "Active",
+                design_tag: "01 / Visual Gallery",
+                design_title: "Graphic Design & Brand Identity",
+                filter_all: "All",
+                filter_branding: "Branding",
+                filter_uiux: "Mobile UI/UX",
+                filter_poster: "Poster & Illustration",
+                card_ph_1: "Placeholder: Brand Guidelines",
+                card_desc_1: "Complete brand guideline design including logo, color palette, typography, and comprehensive social media assets.",
+                card_ph_2: "Placeholder: Mobile App UI",
+                card_desc_2: "Mobile app interface design focusing on accessibility, dark/light mode, and financial data visualization.",
+                card_ph_3: "Placeholder: Poster Art",
+                card_desc_3: "Experimental technology-themed futuristic poster collection combining bold typography and raster elements.",
+                btn_view_detail: "View Details",
+                webapp_tag: "02 / Interactive Web Apps",
+                webapp_title: "Web App Showcase",
+                webapp_subtitle: "Try out a simple interactive web application integrated directly inside this portfolio.",
+                webapp_card_sub: "Daily Productivity",
+                webapp_card_desc: "Task management app integrated with a Pomodoro timer to help you focus on completing daily tasks.",
+                btn_break: "Break (5m)",
+                btn_start: "Start",
+                btn_reset: "Reset",
+                task_heading: "Today's Task List",
+                task_placeholder: "Add a new task...",
+                btn_add: "Add",
+                game_tag: "03 / Interactive Mini Game",
+                game_subtitle: "Catch as many blue cubes as you can using the pixel basket within 30 seconds!",
+                game_score: "Score",
+                game_time: "Time",
+                game_desc: "Move your cursor or touch the screen left & right to catch falling blue cubes.",
+                btn_play_game: "Start Playing",
+                btn_left: "Left",
+                btn_right: "Right",
+                contact_tag: "04 / Get In Touch",
+                contact_title: "Let's Collaborate Together!",
+                contact_subtitle: "Have an exciting project regarding graphic design, web app development, or just want to chat? Feel free to send a message.",
+                contact_email_label: "Primary Email",
+                contact_location_label: "Location",
+                form_title: "Send Quick Message",
+                form_name: "Full Name",
+                form_name_ph: "Enter your name...",
+                form_email: "Email Address",
+                form_email_ph: "name@email.com",
+                form_message: "Message",
+                form_message_ph: "Write your message or project details...",
+                form_submit: "Send Message",
+                footer_brand: "Creative Portfolio",
+                footer_copy: "© 2026 Interactive Portfolio. Built with Clean Design & Tailwind CSS.",
+                modal_close: "Close",
+                toast_success: "Message successfully sent!"
+            }
+        };
+
+        let currentLang = 'id';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            const btnId = document.getElementById('lang-id');
+            const btnEn = document.getElementById('lang-en');
+
+            if (lang === 'id') {
+                btnId.className = "px-3 py-1 rounded-lg text-xs font-bold transition-all bg-brand-blue text-white shadow-sm";
+                btnEn.className = "px-3 py-1 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900";
+                document.documentElement.lang = 'id';
+            } else {
+                btnEn.className = "px-3 py-1 rounded-lg text-xs font-bold transition-all bg-brand-blue text-white shadow-sm";
+                btnId.className = "px-3 py-1 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900";
+                document.documentElement.lang = 'en';
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        }
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const designCards = document.querySelectorAll('.design-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-blue', 'text-white', 'shadow-sm');
+                    b.classList.add('bg-slate-100', 'text-slate-600');
+                });
+                btn.classList.remove('bg-slate-100', 'text-slate-600');
+                btn.classList.add('bg-brand-blue', 'text-white', 'shadow-sm');
+
+                const filter = btn.getAttribute('data-filter');
+                designCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        function openModal(title, desc, category) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal-category').innerText = category.toUpperCase();
+            document.getElementById('detail-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('detail-modal').classList.add('hidden');
+        }
+
+        let timerInterval = null;
+        let timeLeft = 25 * 60;
+        let isRunning = false;
+        let currentMode = 'pomodoro';
+
+        function formatTime(seconds) {
+            const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const s = (seconds % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        function updateTimerDisplay() {
+            document.getElementById('timer-display').innerText = formatTime(timeLeft);
+        }
+
+        function setTimerMode(mode) {
+            currentMode = mode;
+            clearInterval(timerInterval);
+            isRunning = false;
+            document.getElementById('timer-toggle-btn').innerHTML = `<i class="fa-solid fa-play mr-2"></i> <span>${translations[currentLang].btn_start}</span>`;
+            
+            if (mode === 'pomodoro') {
+                timeLeft = 25 * 60;
+                document.getElementById('btn-pomodoro').className = 'px-4 py-1.5 rounded-lg bg-brand-blue text-white text-xs font-bold transition-all';
+                document.getElementById('btn-short').className = 'px-4 py-1.5 rounded-lg bg-white text-slate-600 text-xs font-bold border border-slate-200 transition-all';
+            } else {
+                timeLeft = 5 * 60;
+                document.getElementById('btn-short').className = 'px-4 py-1.5 rounded-lg bg-brand-blue text-white text-xs font-bold transition-all';
+                document.getElementById('btn-pomodoro').className = 'px-4 py-1.5 rounded-lg bg-white text-slate-600 text-xs font-bold border border-slate-200 transition-all';
+            }
+            updateTimerDisplay();
+        }
+
+        function toggleTimer() {
+            if (isRunning) {
+                clearInterval(timerInterval);
+                isRunning = false;
+                document.getElementById('timer-toggle-btn').innerHTML = `<i class="fa-solid fa-play mr-2"></i> <span>${translations[currentLang].btn_start}</span>`;
+            } else {
+                isRunning = true;
+                document.getElementById('timer-toggle-btn').innerHTML = `<i class="fa-solid fa-pause mr-2"></i> <span>${currentLang === 'id' ? 'Jeda' : 'Pause'}</span>`;
+                timerInterval = setInterval(() => {
+                    if (timeLeft > 0) {
+                        timeLeft--;
+                        updateTimerDisplay();
+                    } else {
+                        clearInterval(timerInterval);
+                        isRunning = false;
+                        showToast(currentLang === 'id' ? 'Waktu selesai! Waktunya istirahat.' : 'Time is up! Take a break.');
+                        document.getElementById('timer-toggle-btn').innerHTML = `<i class="fa-solid fa-play mr-2"></i> <span>${translations[currentLang].btn_start}</span>`;
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            document.getElementById('timer-toggle-btn').innerHTML = `<i class="fa-solid fa-play mr-2"></i> <span>${translations[currentLang].btn_start}</span>`;
+            timeLeft = currentMode === 'pomodoro' ? 25 * 60 : 5 * 60;
+            updateTimerDisplay();
+        }
+
+        let tasks = [
+            { id: 1, text: 'Membuat sketsa wireframe UI baru', completed: true },
+            { id: 2, text: 'Review kode frontend web app', completed: false }
+        ];
+
+        function renderTasks() {
+            const listEl = document.getElementById('task-list');
+            listEl.innerHTML = '';
+            if (tasks.length === 0) {
+                listEl.innerHTML = `<p class="text-xs text-slate-400 text-center py-4">${currentLang === 'id' ? 'Belum ada tugas.' : 'No tasks yet.'}</p>`;
+                return;
+            }
+            tasks.forEach(t => {
+                const item = document.createElement('div');
+                item.className = 'flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all';
+                item.innerHTML = `
+                    <label class="flex items-center gap-3 cursor-pointer flex-1">
+                        <input type="checkbox" ${t.completed ? 'checked' : ''} onchange="toggleTask(${t.id})" class="w-4 h-4 text-brand-blue rounded border-slate-300 focus:ring-brand-blue">
+                        <span class="text-sm ${t.completed ? 'line-through text-slate-400' : 'text-slate-700 font-medium'}">${t.text}</span>
+                    </label>
+                    <button onclick="deleteTask(${t.id})" class="text-slate-400 hover:text-red-500 p-1"><i class="fa-solid fa-trash text-xs"></i></button>
+                `;
+                listEl.appendChild(item);
+            });
+        }
+
+        function addTask() {
+            const input = document.getElementById('task-input');
+            const val = input.value.trim();
+            if (!val) return;
+            tasks.push({ id: Date.now(), text: val, completed: false });
+            input.value = '';
+            renderTasks();
+        }
+
+        function toggleTask(id) {
+            tasks = tasks.map(t => t.id === id ? { ...t, completed: !t.completed } : t);
+            renderTasks();
+        }
+
+        function deleteTask(id) {
+            tasks = tasks.filter(t => t.id !== id);
+            renderTasks();
+        }
+
+        renderTasks();
+
+        let gameInterval = null;
+        let itemInterval = null;
+        let gameScore = 0;
+        let gameTimeLeft = 30;
+        let isGamePlaying = false;
+        let basketX = 50;
+        const container = document.getElementById('game-container');
+        const basket = document.getElementById('game-basket');
+
+        function startGame() {
+            const overlay = document.getElementById('game-overlay');
+            overlay.classList.add('hidden');
+            gameScore = 0;
+            gameTimeLeft = 30;
+            isGamePlaying = true;
+            basketX = 50;
+            basket.style.left = basketX + '%';
+            document.getElementById('game-score').innerText = gameScore;
+            document.getElementById('game-time').innerText = gameTimeLeft;
+
+            document.querySelectorAll('.falling-item').forEach(el => el.remove());
+
+            gameInterval = setInterval(() => {
+                gameTimeLeft--;
+                document.getElementById('game-time').innerText = gameTimeLeft;
+                if (gameTimeLeft <= 0) {
+                    endGame();
+                }
+            }, 1000);
+
+            itemInterval = setInterval(spawnItem, 700);
+        }
+
+        function spawnItem() {
+            if (!isGamePlaying) return;
+            const item = document.createElement('div');
+            item.className = 'absolute w-8 h-8 bg-brand-blue rounded-lg shadow-md shadow-brand-blue/50 border border-blue-400 falling-item transition-all duration-75';
+            const randomX = Math.random() * 85 + 5;
+            item.style.left = randomX + '%';
+            item.style.top = '0px';
+            container.appendChild(item);
+
+            let currentTop = 0;
+            const fall = setInterval(() => {
+                if (!isGamePlaying) {
+                    clearInterval(fall);
+                    item.remove();
+                    return;
+                }
+                currentTop += 4;
+                item.style.top = currentTop + 'px';
+
+                if (currentTop >= 280 && currentTop <= 315) {
+                    const itemLeft = parseFloat(item.style.left);
+                    if (Math.abs(itemLeft - basketX) < 12) {
+                        gameScore += 10;
+                        document.getElementById('game-score').innerText = gameScore;
+                        item.remove();
+                        clearInterval(fall);
+                    }
+                }
+
+                if (currentTop > 330) {
+                    item.remove();
+                    clearInterval(fall);
+                }
+            }, 30);
+        }
+
+        function moveBasketLeft() {
+            if (!isGamePlaying) return;
+            basketX = Math.max(10, basketX - 8);
+            basket.style.left = basketX + '%';
+        }
+
+        function moveBasketRight() {
+            if (!isGamePlaying) return;
+            basketX = Math.min(90, basketX + 8);
+            basket.style.left = basketX + '%';
+        }
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isGamePlaying) return;
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            basketX = (x / rect.width) * 100;
+            basketX = Math.max(5, Math.min(95, basketX));
+            basket.style.left = basketX + '%';
+        });
+
+        container.addEventListener('touchmove', (e) => {
+            if (!isGamePlaying) return;
+            const rect = container.getBoundingClientRect();
+            const touch = e.touches[0];
+            const x = touch.clientX - rect.left;
+            basketX = (x / rect.width) * 100;
+            basketX = Math.max(5, Math.min(95, basketX));
+            basket.style.left = basketX + '%';
+        });
+
+        function endGame() {
+            isGamePlaying = false;
+            clearInterval(gameInterval);
+            clearInterval(itemInterval);
+            document.querySelectorAll('.falling-item').forEach(el => el.remove());
+
+            const overlay = document.getElementById('game-overlay');
+            overlay.classList.remove('hidden');
+            overlay.querySelector('h3').innerText = currentLang === 'id' ? 'Permainan Selesai!' : 'Game Over!';
+            overlay.querySelector('p').innerText = currentLang === 'id' ? `Skor akhir Anda: ${gameScore}. Hebat sekali!` : `Your final score: ${gameScore}. Awesome!`;
+            overlay.querySelector('button').innerText = currentLang === 'id' ? 'Main Lagi' : 'Play Again';
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const msg = currentLang === 'id' ? `Terima kasih ${name}, pesan Anda telah terkirim!` : `Thank you ${name}, your message has been sent!`;
+            showToast(msg);
+            document.getElementById('contact-form').reset();
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').innerText = msg;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3500);
+        }
+    </script>
 </body>
 </html>
