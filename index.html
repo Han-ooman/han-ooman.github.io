@@ -29,7 +29,7 @@
                     <a href="#contact" data-i18n="navContact" class="hover:text-blue-600 transition">Kontak</a>
                 </nav>
 
-                <!-- Language Switcher Button -->
+                <!-- Language Switcher -->
                 <button id="langToggle" onclick="toggleLanguage()" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 hover:border-blue-600 text-xs font-semibold bg-white transition shadow-sm">
                     <span id="langIndicator" class="text-blue-600 font-bold">ID</span> | <span class="text-slate-400">EN</span>
                 </button>
@@ -159,7 +159,7 @@
                 </div>
             </div>
 
-            <!-- Project 4: Jersey & Printing Design -->
+            <!-- Project 4: Jersey Design -->
             <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group" data-category="jersey">
                 <div class="aspect-video bg-slate-900 relative overflow-hidden flex items-center justify-center">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10"></div>
@@ -256,9 +256,8 @@
         <p>&copy; 2026 Hanapi. All rights reserved. • Design, Code, Create.</p>
     </footer>
 
-    <!-- JavaScript Logic -->
+    <!-- JavaScript Engine -->
     <script>
-        // Language Dictionary
         const translations = {
             id: {
                 navAbout: "Tentang",
@@ -360,7 +359,6 @@
             currentLang = currentLang === 'id' ? 'en' : 'id';
             document.getElementById('langIndicator').innerText = currentLang.toUpperCase();
             
-            // Loop through all data-i18n attributes and replace text safely
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[currentLang][key]) {
@@ -368,14 +366,12 @@
                 }
             });
 
-            // Update Input Placeholder
             const taskInput = document.getElementById('taskInput');
             if (taskInput) {
                 taskInput.placeholder = translations[currentLang].taskPlaceholder;
             }
         }
 
-        // Filter Logic
         function filterProject(category, evt) {
             const cards = document.querySelectorAll('.project-card');
             const buttons = document.querySelectorAll('.filter-btn');
@@ -399,7 +395,6 @@
             });
         }
 
-        // Task Logic
         function addTask() {
             const input = document.getElementById('taskInput');
             const list = document.getElementById('taskList');
@@ -413,7 +408,6 @@
             input.value = '';
         }
 
-        // Mini Game Logic
         let score = 0;
         let timeLeft = 15;
         let gameInterval;
